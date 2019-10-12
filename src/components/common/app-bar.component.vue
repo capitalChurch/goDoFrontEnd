@@ -8,11 +8,9 @@
         <div class="actions">
             <Button v-if="!isLogged" @click="toggleLogged">Entrar</Button>
             <IconButton v-if="isLogged" @click="toggleLogged">notifications</IconButton>
-            <div class="userInfo" v-if="isLogged">
-                <Button :flat="true" icon="person_outline">
-                    <span>{{userInfo.name}}</span>
-                </Button>
-            </div>
+            <Button :flat="true" icon="person_outline" v-if="isLogged" @click="toggleLogged">
+                <span>{{userInfo.name}}</span>
+            </Button>
             <IconButton>menu</IconButton>
         </div>
     </div>
@@ -52,6 +50,11 @@
         justify-content: space-between;
         align-items: center;
 
+        .actions{
+            display: flex;
+            align-items: center;
+        }
+
         .logoFake{
             $size: 70px;
 
@@ -67,10 +70,6 @@
                 top: 50%;
                 transform: translateX(-50%) translateY(-50%);
             }
-        }
-
-        .userInfo{
-            display: inline;
         }
     }
 </style>
