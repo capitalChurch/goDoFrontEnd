@@ -6,19 +6,20 @@
             </div>
         </div>
         <div class="actions">
-            <md-button class="md-icon-button">
-                <md-icon>menu</md-icon>
-            </md-button>
+            <Button>Entrar</Button>
+            <IconButton>menu</IconButton>
         </div>
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
+    import IconButton from '@/components/common/icon-button.component.vue';
+    import Button from '@/components/common/button.component.vue';
 
     @Component({
         name: 'AppBar',
-        components:{ }
+        components:{IconButton, Button }
     })
     export default class AppBarComponent extends Vue{
     }
@@ -29,6 +30,10 @@
 
     .appBar{
         display: flex;
+        padding: 32px;
+        justify-content: space-between;
+        align-items: center;
+
         .logoFake{
             $size: 70px;
 

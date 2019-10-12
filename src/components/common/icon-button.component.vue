@@ -1,6 +1,8 @@
 <template>
-    <md-button class="md-raised md-primary" @click="handleClick">
-        <slot>none</slot>
+    <md-button class="md-icon-button" @click="handleClick">
+        <md-icon>
+            <slot></slot>
+        </md-icon>
     </md-button>
 </template>
 
@@ -8,9 +10,9 @@
     import {Component, Vue} from "vue-property-decorator";
 
     @Component({
-        name: 'ButtonComponent'
+        name: 'IconButtonComponent'
     })
-    export default class ButtonComponent extends Vue{
+    export default class IconButtonComponent extends Vue{
         public handleClick(){
             this.$emit('click');
         }
@@ -18,4 +20,5 @@
 </script>
 
 <style lang="scss" scoped>
+
 </style>
