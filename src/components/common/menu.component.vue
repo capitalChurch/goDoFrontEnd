@@ -1,6 +1,9 @@
 <template>
     <div class="menu">
-        Este é o menu
+        <div class="logo"></div>
+        <div class="actions">
+
+        </div>
     </div>
 </template>
 

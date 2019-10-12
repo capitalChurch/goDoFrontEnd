@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import store from './store';
+import store from './model/store/store';
 import VueRouter, {RouteConfig} from 'vue-router';
 import HomePage from '@/components/home/home.page.vue';
 import LoginPage from '@/components/user/login/login.page.vue';
