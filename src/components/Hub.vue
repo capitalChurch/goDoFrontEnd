@@ -32,6 +32,7 @@
 <style lang="scss" scoped>
     ul li{
         cursor: pointer;
+        padding: 8px;
 
         &:hover{
             font-weight: bold;

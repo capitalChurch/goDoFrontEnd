@@ -13,6 +13,7 @@ import SupportUsPage from '@/components/support-us/support-us.page.vue';
 import EventDetailPage from './components/event-detail/event-detail.page.vue';
 import HubPage from '@/components/Hub.vue';
 import App from '@/App.vue';
+import AboutUsPage from '@/components/about-us/about-us.page.vue';
 
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
@@ -29,6 +30,7 @@ export const allRoutes: RouteConfig[] = [
   {path: '/peace', component: PeacePage},
   {path: '/supportUs', component: SupportUsPage},
   {path: '/eventDetail', component: EventDetailPage},
+  {path: '/aboutUs', component: AboutUsPage}
 ];
 
 const router = new VueRouter({
