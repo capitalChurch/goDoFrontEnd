@@ -1,5 +1,5 @@
 <template>
-    <md-button class="md-icon-button" @click="handleClick">
+    <md-button class="md-icon-button md-primary" @click="handleClick">
         <md-icon>
             <slot></slot>
         </md-icon>

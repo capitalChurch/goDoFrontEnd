@@ -6,7 +6,13 @@
             </div>
         </div>
         <div class="actions">
-            <Button>Entrar</Button>
+            <Button v-if="!isLogged" @click="toggleLogged">Entrar</Button>
+            <IconButton v-if="isLogged" @click="toggleLogged">notifications</IconButton>
+            <div class="userInfo" v-if="isLogged">
+                <Button :flat="true" icon="person_outline">
+                    <span>{{userInfo.name}}</span>
+                </Button>
+            </div>
             <IconButton>menu</IconButton>
         </div>
     </div>
@@ -14,14 +20,26 @@
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
-    import IconButton from '@/components/common/icon-button.component.vue';
-    import Button from '@/components/common/button.component.vue';
+    import IconButton from '@/components/common/utils/icon-button.component.vue';
+    import Button from '@/components/common/utils/button.component.vue';
+    import {GET_USER_INFO} from "@/model/store/constants";
+    import {Person} from '@/model/types';
+    import {Getter} from 'vuex-class';
+    import Icon from '@/components/common/utils/icon.component.vue';
 
     @Component({
         name: 'AppBar',
-        components:{IconButton, Button }
+        components:{Icon, IconButton, Button }
     })
     export default class AppBarComponent extends Vue{
+        public isLogged: boolean = false;
+
+        @Getter(GET_USER_INFO)
+        public userInfo!: Person;
+
+        public toggleLogged(){
+            this.isLogged = !this.isLogged;
+        }
     }
 </script>
 
@@ -49,6 +67,10 @@
                 top: 50%;
                 transform: translateX(-50%) translateY(-50%);
             }
+        }
+
+        .userInfo{
+            display: inline;
         }
     }
 </style>

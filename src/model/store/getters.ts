@@ -5,6 +5,7 @@ import {Countries, Person} from '@/model/types';
 
 export const getters: GetterTree<State, State> = {
     [GET_USER_INFO]: function(state): Person{
+        console.log('pass throw getter');
         return state.person;
     },
     [GET_COUNTRIES]: function(state): Countries{
