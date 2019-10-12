@@ -1,10 +1,14 @@
 <template>
     <div class="appBar">
         <div class="logoContainer">
-            <div class="logoFake">Logo</div>
+            <div class="logoFake">
+                <span>Logo</span>
+            </div>
         </div>
         <div class="actions">
-
+            <v-btn text icon>
+                <v-icon>mdi-heart</v-icon>
+            </v-btn>
         </div>
     </div>
 </template>
@@ -13,7 +17,7 @@
     import {Component, Vue} from "vue-property-decorator";
 
     @Component({
-        name: 'AppBar'
+        name: 'AppBar',
     })
     export default class AppBarComponent extends Vue{
     }
@@ -25,7 +29,20 @@
     .appBar{
         display: flex;
         .logoFake{
+            $size: 70px;
+
+            position: relative;
             background: $primaryColor;
+            color: white;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            span{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
         }
     }
 </style>
