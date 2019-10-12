@@ -1,6 +1,12 @@
 <template>
     <div class="home">
-        <h3>esta é a home</h3>
+        <CoverSection></CoverSection>
+        <AboutSection></AboutSection>
+        <PeaceSection></PeaceSection>
+        <SupportSection></SupportSection>
+        <PraySection></PraySection>
+        <EventsSection></EventsSection>
+        <NewsSection></NewsSection>
     </div>
 </template>
 
@@ -8,10 +14,19 @@
     import {Component, Vue} from "vue-property-decorator";
     import Menu from '@/components/common/menu.component.vue';
     import AppBar from '@/components/common/app-bar.component.vue';
+    import CoverSection from '@/components/home/cover.section.vue';
+    import AboutSection from '@/components/home/about.section.vue';
+    import PeaceSection from '@/components/home/peace.section.vue';
+    import SupportSection from '@/components/home/support.section.vue';
+    import PraySection from '@/components/home/pray.section.vue';
+    import EventsSection from '@/components/home/events.section.vue';
+    import NewsSection from '@/components/home/news.section.vue';
 
     @Component({
         name: 'HomePage',
-        components: {AppBar, Menu}
+        components: {
+            NewsSection,
+            EventsSection, PraySection, SupportSection, PeaceSection, AboutSection, CoverSection, AppBar, Menu}
     })
     export default class HomePage extends Vue{
     }

@@ -68,7 +68,7 @@
             align-items: center;
 
             > * {
-                padding: 0 8px;
+                margin: 0 8px;
             }
         }
 
