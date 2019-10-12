@@ -6,9 +6,9 @@
             </div>
         </div>
         <div class="actions">
-            <v-btn text icon>
-                <v-icon>mdi-heart</v-icon>
-            </v-btn>
+            <md-button class="md-icon-button">
+                <md-icon>menu</md-icon>
+            </md-button>
         </div>
     </div>
 </template>
@@ -18,6 +18,7 @@
 
     @Component({
         name: 'AppBar',
+        components:{ }
     })
     export default class AppBarComponent extends Vue{
     }

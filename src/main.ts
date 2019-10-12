@@ -14,8 +14,11 @@ import EventDetailPage from './components/event-detail/event-detail.page.vue';
 import HubPage from '@/components/Hub.vue';
 import App from '@/App.vue';
 import AboutUsPage from '@/components/about-us/about-us.page.vue';
+import {MdButton, MdIcon} from 'vue-material/dist/components';
 
 Vue.use(VueRouter);
+Vue.use(MdButton);
+Vue.use(MdIcon);
 Vue.config.productionTip = false;
 
 export const allRoutes: RouteConfig[] = [
