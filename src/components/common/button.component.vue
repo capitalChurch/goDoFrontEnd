@@ -1,5 +1,6 @@
 <template>
-    <div class="menu">
+    <div class="button">
+
     </div>
 </template>
 
@@ -7,9 +8,9 @@
     import {Component, Vue} from "vue-property-decorator";
 
     @Component({
-        name: 'Menu'
+        name: 'ButtonComponent'
     })
-    export default class Menu extends Vue{
+    export default class ButtonComponent extends Vue{
     }
 </script>
 
