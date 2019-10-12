@@ -1,14 +1,16 @@
 <template>
     <div class="app">
+        <AppBar></AppBar>
         <router-view></router-view>
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
+    import AppBar from "@/components/common/app-bar.component.vue";
 
     @Component({
-        components: {},
+        components: {AppBar},
     })
     export default class App extends Vue {
     }

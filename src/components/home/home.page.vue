@@ -1,6 +1,5 @@
 <template>
     <div class="home">
-        <AppBar></AppBar>
         <h3>esta é a home</h3>
     </div>
 </template>
