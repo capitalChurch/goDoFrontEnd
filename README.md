@@ -1,4 +1,4 @@
-# go-do-front-end
+# Go & Do - Front End
 
 ## Project setup
 ```
@@ -7,18 +7,14 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm start
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Deploy 
 
-### Lints and fixes files
-```
-npm run lint
-```
+deploy is made automatically
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Results
+
+[Click here](http://3eb26e7f-7d77-48d7-ae18-c21d166995ad.pub.cloud.scaleway.com:8086/)
+
