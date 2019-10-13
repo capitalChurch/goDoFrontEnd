@@ -21,5 +21,10 @@
 
     .churchFlag{
         fill: $primaryColor;
+
+        &:after {
+            fill: $negativePrimaryColor;
+            mix-blend-mode: difference;
+        }
     }
 </style>

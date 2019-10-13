@@ -43,6 +43,11 @@
             padding-bottom: 8px;
             color: $primaryColor;
             font-weight: bold;
+
+            &:after{
+                color: $negativePrimaryColor;
+                mix-blend-mode: difference;
+            }
         }
 
         div {
