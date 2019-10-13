@@ -2,9 +2,7 @@
     <div class="appBarContainer">
         <div class="appBar">
             <div class="logoContainer">
-                <div class="logoFake">
-                    <span>Logo</span>
-                </div>
+                <Logo />
             </div>
             <div class="actions">
                 <Button v-if="!isLogged" @click="toggleLogged">Entrar</Button>
@@ -28,10 +26,11 @@
     import {Getter} from "vuex-class";
     import Icon from "@/components/common/utils/icon.component.vue";
     import Menu from "@/components/common/menu.component.vue";
+    import Logo from '@/components/common/utils/logo.vue';
 
     @Component({
         name: "AppBar",
-        components: {Icon, IconButton, Button, Menu}
+        components: {Logo, Icon, IconButton, Button, Menu}
     })
     export default class AppBarComponent extends Vue {
         public isLogged: boolean = false;
