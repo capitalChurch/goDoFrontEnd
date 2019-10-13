@@ -1,16 +1,20 @@
 <template>
     <div class="app">
         <AppBar></AppBar>
-        <router-view></router-view>
+        <div class="bodyApp">
+            <router-view></router-view>
+        </div>
+        <ContactBar />
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
     import AppBar from "@/components/common/app-bar.component.vue";
+    import ContactBar from '@/components/common/contact-bar.component.vue';
 
     @Component({
-        components: {AppBar},
+        components: {ContactBar, AppBar},
     })
     export default class App extends Vue {
     }
@@ -33,5 +37,10 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
+
+        .bodyApp{
+            max-width: 70vw;
+            margin: 0 15vw;
+        }
     }
 </style>

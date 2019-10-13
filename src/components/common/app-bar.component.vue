@@ -59,9 +59,10 @@
 
     .appBar {
         display: flex;
-        padding: 32px;
+        padding: $paddingMenu $paddingMenu $paddingMenu/4 $paddingMenu;
         justify-content: space-between;
         align-items: center;
+        max-height: $appBarHeight;
 
         .actions {
             display: flex;
