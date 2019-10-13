@@ -52,7 +52,7 @@
             display: flex;
             flex-flow: column wrap;
             max-width: $maxWidthBody*.7;
-            height: 290px;
+            max-height: 290px;
 
             p {
                 font-size: $normalFontSize;
