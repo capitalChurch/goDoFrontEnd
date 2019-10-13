@@ -24,6 +24,7 @@
         align-items: center;
         height: calc(100vh - #{$appBarHeight});
         padding-bottom: $appBarHeight;
+        padding-left: calc((100vw - #{$maxWidthBody}) / 2);
 
         h1{
             font-size: $h0FontSize;

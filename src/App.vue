@@ -30,7 +30,7 @@
 
     @include md-register-theme("default", (
         primary: $primaryColor,
-        accent: #000
+        accent: white
     ));
 
     @import "~vue-material/dist/theme/all";
@@ -41,11 +41,6 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-
-        .bodyApp{
-            max-width: 70vw;
-            margin: 0 15vw;
-        }
 
         .logoChurch{
             position: fixed;
