@@ -61,6 +61,9 @@
         top: 0;
         left: 0;
         width: 100vw;
+
+        z-index: 9;
+
         .appBar {
             display: flex;
             padding: $paddingMenu $paddingMenu $paddingMenu/4 $paddingMenu;

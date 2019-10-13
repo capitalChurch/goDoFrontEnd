@@ -49,5 +49,9 @@
 
     .md-button{
         margin: 0;
+
+        .md-ripple .md-button-content{
+            padding: 0 24px;
+        }
     }
 </style>

@@ -20,7 +20,6 @@
 
     .logoContainer{
         height: 58px;
-
         filter: $shadowIcons;
 
         .logo{
