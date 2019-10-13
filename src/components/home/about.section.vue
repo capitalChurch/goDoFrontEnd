@@ -63,9 +63,10 @@
             .text {
                 display: flex;
                 flex-flow: column wrap;
-                max-width: $maxWidthBody * .59;
+                min-width: $maxWidthBody * .58;
                 max-height: 290px;
                 margin: $paddingMenu 0;
+                background: tomato;
 
                 p {
                     font-size: $normalFontSize;
@@ -83,7 +84,7 @@
                 position: absolute;
                 top: $paddingMenu;
                 right: 16px;
-                max-width: 25vw;
+                max-width: 500px;
             }
         }
     }
