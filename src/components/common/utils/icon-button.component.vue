@@ -1,5 +1,5 @@
 <template>
-    <md-button :class="['md-icon-button', {'md-primary': !color}, color]" @click="handleClick">
+    <md-button :class="['md-icon-button', {'md-accent': !color}, color]" @click="handleClick">
         <md-icon>
             <slot v-if="!hide"></slot>
         </md-icon>
@@ -9,7 +9,7 @@
 <script lang="ts">
     import {Component, Prop, Vue} from "vue-property-decorator";
 
-    type colors = 'white';
+    type colors = 'white' | 'primary';
     @Component({
         name: 'IconButtonComponent'
     })
@@ -27,7 +27,13 @@
 </script>
 
 <style lang="scss">
+    @import "../../../theme";
+
     .white .md-ripple .md-button-content i{
         color: white;
+    }
+
+    .primary .md-ripple .md-button-content i{
+        color: $primaryColor;
     }
 </style>

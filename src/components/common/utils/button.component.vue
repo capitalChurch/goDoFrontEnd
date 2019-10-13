@@ -1,5 +1,5 @@
 <template>
-    <md-button :class="[{'md-raised': !flat}, {flat}, {'md-accent': color === 'accent'}, {'md-primary': color !== 'accent'}]" @click="handleClick">
+    <md-button :class="[{'md-raised': !flat}, {flat}, {[styleClass]: true}]" @click="handleClick">
         <Icon v-if="!!icon" class="icon">{{icon}}</Icon>
         <slot>none</slot>
     </md-button>
@@ -28,6 +28,13 @@
         public handleClick(){
             this.$emit('click');
         }
+
+        public get styleClass(): string{
+            if(this.flat || this.color === 'accent')
+                return 'md-accent';
+
+            return 'md-primary';
+        }
     }
 </script>
 
@@ -37,9 +44,7 @@
     }
 
     .flat{
-        span{
-            text-transform: capitalize;
-        }
+        text-transform: capitalize;
     }
 
     .md-button{

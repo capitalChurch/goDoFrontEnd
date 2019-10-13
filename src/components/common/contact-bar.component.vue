@@ -2,24 +2,24 @@
     <div class="contactBarComponent">
         <span class="contact">Tire suas dúvidas</span>
         <div>
-            <span class="circle">f</span>
-            <span class="circle">i</span>
-            <span class="circle">y</span>
-            <span class="circle">t</span>
+            <Instagram />
+            <Facebook />
         </div>
     </div>
 </template>
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
+    import Instagram from '@/components/common/utils/icons/instagram.vue';
+    import Facebook from '@/components/common/utils/icons/facebook.vue';
 
     @Component({
         name: "ContactBarComponent",
-        components: {}
+        components: {Facebook, Instagram}
     })
     export default class ContactBarComponent extends Vue {
     }
-</script>
+</script>z
 
 <style lang="scss" scoped>
     @import "../../theme";
@@ -41,26 +41,19 @@
             font-size: $normalFontSize;
             line-height: $normalFontSize + ($paddingHorizontalIcons * 2) + ($marginIcons * 2);
             padding-bottom: 8px;
-            color: $primaryColor;
+            color: $accentColor;
             font-weight: bold;
+            cursor: pointer;
 
-            &:after{
-                color: $negativePrimaryColor;
-                mix-blend-mode: difference;
-            }
+
+
         }
 
         div {
             display: flex;
             flex-direction: column;
 
-            .circle {
-                margin: $marginIcons;
-                border: 3px $primaryColor solid;
-                border-radius: 50%;
-                padding: 2px $paddingHorizontalIcons;
-                color: $primaryColor;
-            }
+
         }
     }
 </style>

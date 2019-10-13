@@ -15,7 +15,7 @@
     import {Component, Vue} from "vue-property-decorator";
     import AppBar from "@/components/common/app-bar.component.vue";
     import ContactBar from '@/components/common/contact-bar.component.vue';
-    import ChurchLogo from '@/components/common/utils/churchLogo.vue';
+    import ChurchLogo from '@/components/common/utils/icons/churchLogo.vue';
 
     @Component({
         components: {ChurchLogo, ContactBar, AppBar},
@@ -30,7 +30,7 @@
 
     @include md-register-theme("default", (
         primary: $primaryColor,
-        accent: white
+        accent: $accentColor
     ));
 
     @import "~vue-material/dist/theme/all";
