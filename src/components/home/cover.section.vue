@@ -1,6 +1,6 @@
 <template>
     <div class="coverSection">
-        <h1>Texto inicial da página!</h1>
+        <h1>Seja a<br />resposta para as necessidades do mundo.</h1>
     </div>
 </template>
 
@@ -31,7 +31,7 @@
             line-height: $h0FontSize;
             margin: 0;
             color: $primaryColor;
-            max-width: 370px;
+            max-width: 680px;
             text-align: left;
         }
     }
