@@ -22,9 +22,10 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        height: calc(100vh - #{$appBarHeight});
+        height: 100vh;
         padding-bottom: $appBarHeight;
         padding-left: calc((100vw - #{$maxWidthBody}) / 2);
+
 
         h1{
             font-size: $h0FontSize;
