@@ -37,7 +37,7 @@
             width: 100%;
             background-image: url("../../assets/images/guine.png");
             background-size: cover;
-            z-index: 0;
+            z-index: -1;
             filter: brightness(.6);
         }
 

@@ -30,12 +30,19 @@
 </script>
 
 <style lang="scss" scoped>
-    ul li{
-        cursor: pointer;
-        padding: 8px;
+    .hub{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        ul li{
+            cursor: pointer;
+            padding: 8px;
 
-        &:hover{
-            font-weight: bold;
+            &:hover{
+                font-weight: bold;
+            }
         }
     }
 </style>
