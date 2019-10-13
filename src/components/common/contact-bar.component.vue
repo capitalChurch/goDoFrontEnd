@@ -42,6 +42,7 @@
             line-height: $normalFontSize + ($paddingHorizontalIcons * 2) + ($marginIcons * 2);
             padding-bottom: 8px;
             color: $primaryColor;
+            font-weight: bold;
         }
 
         div {

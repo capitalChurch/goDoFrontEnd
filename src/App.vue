@@ -5,6 +5,9 @@
             <router-view></router-view>
         </div>
         <ContactBar />
+        <div class="logoChurch">
+            <img src="./assets/churchLogo.svg" alt="">
+        </div>
     </div>
 </template>
 
@@ -41,6 +44,16 @@
         .bodyApp{
             max-width: 70vw;
             margin: 0 15vw;
+        }
+
+        .logoChurch{
+            position: fixed;
+            bottom: $paddingMenu;
+            left: $paddingMenu;
+
+            img{
+                width: 25px;
+            }
         }
     }
 </style>
