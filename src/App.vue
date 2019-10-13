@@ -6,7 +6,7 @@
         </div>
         <ContactBar />
         <div class="logoChurch">
-            <img src="./assets/churchLogo.svg" alt="">
+            <ChurchLogo />
         </div>
     </div>
 </template>
@@ -15,9 +15,10 @@
     import {Component, Vue} from "vue-property-decorator";
     import AppBar from "@/components/common/app-bar.component.vue";
     import ContactBar from '@/components/common/contact-bar.component.vue';
+    import ChurchLogo from '@/components/common/utils/churchLogo.vue';
 
     @Component({
-        components: {ContactBar, AppBar},
+        components: {ChurchLogo, ContactBar, AppBar},
     })
     export default class App extends Vue {
     }
