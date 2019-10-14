@@ -64,15 +64,13 @@
                 display: flex;
                 flex-flow: column wrap;
                 min-width: $maxWidthBody * .58;
-                max-height: 290px;
                 margin: $paddingMenu 0;
-                background: tomato;
+                max-height: 290px;
 
                 p {
                     font-size: $normalFontSize;
-                    max-width: $maxWidthBody * .25;
-                    word-wrap: break-word;
-                    white-space: initial;
+                    max-width: 20vw;
+                    padding-right: 16px;
                 }
             }
         }

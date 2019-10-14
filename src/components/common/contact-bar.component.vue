@@ -36,17 +36,15 @@
         $paddingHorizontalIcons: 8px;
 
         .contact {
-            writing-mode: sideways-lr;
-            text-orientation: mixed;
+            text-align: right;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
             font-size: $normalFontSize;
             line-height: $normalFontSize + ($paddingHorizontalIcons * 2) + ($marginIcons * 2);
-            padding-bottom: 8px;
+            padding-top: 8px;
             color: $accentColor;
             font-weight: bold;
             cursor: pointer;
-
-
-
         }
 
         div {
