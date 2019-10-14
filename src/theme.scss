@@ -1,5 +1,5 @@
 $primaryColor: rgb(231, 48, 42);
-$accentColor: #4b3a8a;
+$accentColor: #332451;
 
 $yellowColor: #FDBE23;
 $blueColor: #01B6ED;
@@ -17,6 +17,6 @@ $h4FontSize: 24px;
 
 $normalFontSize: 12px;
 
-$shadowIcons: drop-shadow(.5px .5px 1px rgba(230, 240, 242, 0.302));
+$shadowIcons: drop-shadow(0 3px 1px -2px rgba(0,0,0,.2));
 
-
+$paddingLeft: calc((100vw - #{$maxWidthBody}) / 2);

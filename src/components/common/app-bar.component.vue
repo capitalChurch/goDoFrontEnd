@@ -69,8 +69,9 @@
             align-items: center;
             max-height: $appBarHeight;
 
+            z-index: 99;
             >*{
-                z-index: 2;
+                z-index: 99;
             }
 
             .actions {

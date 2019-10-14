@@ -41,7 +41,6 @@
 <style lang="scss" scoped>
     @import "../../theme";
 
-    $paddingLeft: calc((100vw - #{$maxWidthBody}) / 2);
     $horizontalPadding: $paddingMenu * 4;
     .aboutSection {
         padding: $horizontalPadding 0 $horizontalPadding $paddingLeft;
