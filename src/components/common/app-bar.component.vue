@@ -62,16 +62,14 @@
         left: 0;
         width: 100vw;
 
+        z-index: 9;
+
         .appBar {
             display: flex;
             padding: $paddingMenu $paddingMenu $paddingMenu/4 $paddingMenu;
             justify-content: space-between;
             align-items: center;
             max-height: $appBarHeight;
-
-            >*{
-                z-index: 2;
-            }
 
             .actions {
                 display: flex;
