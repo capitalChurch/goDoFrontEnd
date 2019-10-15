@@ -30,11 +30,11 @@
     })
     export default class PeaceSection extends Vue {
         public texts: peaceText[] = [
-            {title: 'Plantar igrejas', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book' },
-            {title: 'Educar a próxima geração', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book' },
-            {title: 'Assistir os pobres', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book' },
-            {title: 'Cuidar dos doentes', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book' },
-            {title: 'Equipar líderes', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book' },
+            {title: 'Plantar igrejas', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
+            {title: 'Educar a próxima geração', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
+            {title: 'Assistir os pobres', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
+            {title: 'Cuidar dos doentes', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
+            {title: 'Equipar líderes', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
         ];
     }
 </script>
@@ -88,7 +88,7 @@
         }
 
         .action{
-            margin: 16px;
+            margin: 32px 0;
         }
     }
 </style>

@@ -8,6 +8,7 @@
         <div class="logoChurch">
             <ChurchLogo />
         </div>
+        <Footer />
     </div>
 </template>
 
@@ -16,9 +17,10 @@
     import AppBar from "@/components/common/app-bar.component.vue";
     import ContactBar from '@/components/common/contact-bar.component.vue';
     import ChurchLogo from '@/components/common/utils/icons/churchLogo.vue';
+    import Footer from '@/components/common/footer.component.vue';
 
     @Component({
-        components: {ChurchLogo, ContactBar, AppBar},
+        components: {Footer, ChurchLogo, ContactBar, AppBar},
     })
     export default class App extends Vue {
     }

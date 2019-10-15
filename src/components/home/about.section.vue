@@ -7,9 +7,7 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
                     scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    into electronic typesetting, remaining essentially unchanged. </p>
                 <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of
                     Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very
                     popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes
@@ -21,7 +19,7 @@
             </div>
         </div>
         <div class="image">
-            <img src="../../assets/images/betoEthuka.png" alt="Pr. Gilberto e Thuka Wegerman">
+            <img src="../../assets/images/bissau.png" alt="Pr. Gilberto e Thuka Wegerman">
         </div>
     </div>
 </template>
@@ -60,15 +58,9 @@
             }
 
             .text {
-                display: flex;
-                flex-flow: column wrap;
-                min-width: $maxWidthBody * .58;
-                margin: $paddingMenu 0;
-                max-height: 290px;
-
                 p {
                     font-size: $normalFontSize;
-                    max-width: 20vw;
+                    max-width: 350px;
                     padding-right: 16px;
                 }
             }
@@ -79,10 +71,14 @@
 
             img{
                 position: absolute;
-                top: $paddingMenu;
-                right: 16px;
-                max-width: 500px;
+                right: 3vw * 2;
+                bottom: $paddingMenu * 5 * -1;
+                max-width: calc(450px + 10vw);
             }
+        }
+
+        .action{
+            margin: 32px 0;
         }
     }
 </style>
