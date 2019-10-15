@@ -38,7 +38,6 @@
             background-image: url("../../assets/images/guine.png");
             background-size: cover;
             z-index: -1;
-            filter: brightness(.6);
         }
 
         h1{
