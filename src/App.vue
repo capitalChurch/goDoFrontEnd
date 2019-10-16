@@ -1,26 +1,14 @@
 <template>
     <div class="app">
-        <AppBar></AppBar>
-        <div class="bodyApp">
-            <router-view></router-view>
-        </div>
-        <ContactBar />
-        <div class="logoChurch">
-            <ChurchLogo />
-        </div>
-        <Footer />
+        <router-view></router-view>
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
-    import AppBar from "@/components/common/app-bar.component.vue";
-    import ContactBar from '@/components/common/contact-bar.component.vue';
-    import ChurchLogo from '@/components/common/utils/icons/churchLogo.vue';
-    import Footer from '@/components/common/footer.component.vue';
 
     @Component({
-        components: {Footer, ChurchLogo, ContactBar, AppBar},
+        components: {},
     })
     export default class App extends Vue {
     }
@@ -43,17 +31,6 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-
-        .logoChurch{
-            z-index: 3;
-            position: fixed;
-            bottom: $paddingMenu;
-            left: $paddingMenu;
-
-            img{
-                width: 25px;
-            }
-        }
     }
 
     @font-face {
@@ -84,5 +61,20 @@
         font-family: Biotif;
         font-weight: 700;
         src: local("Biotif Black"), url("./assets/fonts/Biotif-Black.ttf") format('truetype');
+    }
+
+
+    path{
+        &.white{
+            fill: white;
+        }
+
+        &.purple{
+            fill: $darkPurpleColor;
+        }
+
+        &.accentColor{
+            fill: $accentColor;
+        }
     }
 </style>

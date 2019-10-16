@@ -8,14 +8,14 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from "vue-property-decorator";
+    import {Color} from "@/components/common/types";
 
-    type colors = 'white' | 'primary';
     @Component({
         name: 'IconButtonComponent'
     })
     export default class IconButtonComponent extends Vue{
         @Prop({required: false})
-        public color!: colors;
+        public color!: Color;
 
         @Prop({required: false})
         public hide!: boolean;
@@ -35,5 +35,9 @@
 
     .primary .md-ripple .md-button-content i{
         color: $primaryColor;
+    }
+
+    .purple .md-ripple .md-button-content i{
+        color: $darkPurpleColor;
     }
 </style>

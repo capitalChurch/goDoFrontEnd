@@ -1,14 +1,17 @@
 <template>
-    <div class="aboutUs">
-        Esta é a pagina que começa com o Titulo: <b> Seja a Resposta! </b>
-    </div>
+    <FixedElements color="purple" class="aboutUs">
+        <BeTheAnswer />
+    </FixedElements>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
+    import BeTheAnswer from '@/components/about-us/be-the-answer.section.vue';
+    import FixedElements from '@/components/common/fixed-elements.component.vue';
 
     @Component({
-        name: 'AboutUsPage'
+        name: 'AboutUsPage',
+        components: {FixedElements, BeTheAnswer}
     })
     export default class AboutUsPage extends Vue{
     }

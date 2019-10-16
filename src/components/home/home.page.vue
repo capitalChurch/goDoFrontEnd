@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <FixedElements class="home">
         <CoverSection></CoverSection>
         <AboutSection></AboutSection>
         <PeaceSection></PeaceSection>
@@ -7,7 +7,7 @@
         <PraySection v-if="false"></PraySection>
         <EventsSection v-if="false"></EventsSection>
         <NewsSection v-if="false"></NewsSection>
-    </div>
+    </FixedElements>
 </template>
 
 <script lang="ts">
@@ -21,10 +21,12 @@
     import PraySection from '@/components/home/pray.section.vue';
     import EventsSection from '@/components/home/events.section.vue';
     import NewsSection from '@/components/home/news.section.vue';
+    import FixedElements from '@/components/common/fixed-elements.component.vue';
 
     @Component({
         name: 'HomePage',
         components: {
+            FixedElements,
             NewsSection,
             EventsSection, PraySection, SupportSection, PeaceSection, AboutSection, CoverSection, AppBar, Menu}
     })

@@ -2,15 +2,15 @@
     <div class="appBarContainer">
         <div class="appBar">
             <div class="logoContainer">
-                <Logo/>
+                <Logo :color="color"/>
             </div>
             <div class="actions">
                 <Button v-if="!isLogged" @click="toggleLogged">Entrar</Button>
-                <IconButton v-if="isLogged" @click="toggleLogged">notifications</IconButton>
+                <IconButton v-if="isLogged" @click="toggleLogged" :color="color">notifications</IconButton>
                 <Button :flat="true" icon="person_outline" v-if="isLogged" @click="toggleLogged">
                     {{userInfo.name}}
                 </Button>
-                <IconButton :hide="menuOpened" @click="openMenu">menu</IconButton>
+                <IconButton :hide="menuOpened" @click="openMenu" :color="color">menu</IconButton>
             </div>
         </div>
         <Menu v-if="menuOpened" @onClose="closeMenu"/>
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from "vue-property-decorator";
+    import {Component, Prop, Vue} from "vue-property-decorator";
     import IconButton from "@/components/common/utils/icon-button.component.vue";
     import Button from "@/components/common/utils/button.component.vue";
     import {GET_USER_INFO} from "@/model/store/constants";
@@ -27,6 +27,7 @@
     import Icon from "@/components/common/utils/icon.component.vue";
     import Menu from "@/components/common/menu.component.vue";
     import Logo from "@/components/common/utils/icons/logo.vue";
+    import {Color} from '@/components/common/types';
 
     @Component({
         name: "AppBar",
@@ -38,6 +39,9 @@
 
         @Getter(GET_USER_INFO)
         public userInfo!: Person;
+
+        @Prop({required: true})
+        public color!: Color;
 
         public toggleLogged() {
             this.isLogged = !this.isLogged;

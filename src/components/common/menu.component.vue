@@ -1,7 +1,7 @@
 <template>
     <div class="menuContainer">
         <div class="menu">
-            <IconButton color="white" class="close" @click="handleClose">close</IconButton>
+            <IconButton class="close" @click="handleClose">close</IconButton>
             <div class="links">
                 <span>home</span>
                 <div class="aboutLinks">
