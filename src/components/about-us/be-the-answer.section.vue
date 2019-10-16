@@ -1,6 +1,6 @@
 <template>
     <div class="beTheAnswer">
-        <div class="text">
+        <div class="textContainer">
             <div class="title">Seja a resposta!</div>
             <div class="text">
                 <p>Ser a resposta é o chamado de Deus para todos aqueles que o amam. É se colocar à disposição da mudança dentro de sua comunidade, país ou do mundo. Ser resposta para as necessidades do mundo é o nosso lema e ele carrega todo o nosso sentimento enquanto agência missionária.</p>
@@ -28,4 +28,34 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../theme";
+
+    .beTheAnswer{
+        padding: $paddingMenu*2 0 $paddingMenu $paddingLeft;
+        display: flex;
+        justify-content: space-between;
+
+        .textContainer{
+            text-align: left;
+            max-width: calc(400px + 10vw);
+
+            .title{
+                $fontSize: $h0FontSize;
+                max-width: 80%;
+
+                font-weight: 700;
+                font-size: $fontSize;
+                line-height: $fontSize;
+                color: $primaryColor;
+            }
+
+            .text{
+                font-weight: 200;
+            }
+        }
+
+        .image{
+            max-width: 600px;
+        }
+    }
 </style>

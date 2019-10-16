@@ -35,6 +35,12 @@
 
     @font-face {
         font-family: Biotif;
+        font-weight: 200;
+        src: local("Biotif Book"), url("./assets/fonts/Biotif-Book.ttf") format('truetype');
+    }
+
+    @font-face {
+        font-family: Biotif;
         font-weight: 300;
         src: local("Biotif Regular"), url("./assets/fonts/Biotif-Regular.ttf") format('truetype');
     }

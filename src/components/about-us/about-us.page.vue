@@ -18,5 +18,9 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../theme";
 
+    .aboutUs{
+        margin-top: calc(#{$paddingMenu} + 60px)
+    }
 </style>
