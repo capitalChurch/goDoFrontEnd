@@ -1,16 +1,57 @@
 <template>
-    <div class="coverSection">
-        <ul class="cb-slideshow">
-            <li><span>&nbsp;</span><div><h3>Seja a<br />resposta para<br /> as necessidades do mundo.</h3></div></li>
-            <li><span>&nbsp;</span><div><h3>Seja a<br />resposta para<br /> as necessidades do mundo.</h3></div></li>
-            <li><span>&nbsp;</span><div><h3>Seja a<br />resposta para<br /> as necessidades do mundo.</h3></div></li>
-            <li><span>&nbsp;</span><div><h3>Seja a<br />resposta para<br /> as necessidades do mundo.</h3></div></li>
-            <li><span>&nbsp;</span><div><h3>Seja a<br />resposta para<br /> as necessidades do mundo.</h3></div></li>
-            <li><span>&nbsp;</span><div><h3>Seja a<br />resposta para<br /> as necessidades do mundo.</h3></div></li>
-        </ul>
-    </div>
+	<div class="coverSection"><
+		<div class="container">
+			<div class="carousel">
+				<input type="radio" id="carousel-1" name="carousel[]" checked />
+				<input type="radio" id="carousel-2" name="carousel[]" />
+				<input type="radio" id="carousel-3" name="carousel[]" />
+				<input type="radio" id="carousel-4" name="carousel[]" />
+				<input type="radio" id="carousel-5" name="carousel[]" />
+				<ul class="carousel__items">
+					<li class="carousel__item">
+						<div class="insptext">
+							<h3>Seja a
+								<br />resposta para
+								<br /> as necessidades do mundo.
+							</h3>
+						</div>
+						<img src="../../assets/images/guine.png" alt="" />
+					</li>
+					<li class="carousel__item">
+						<div class="insptext">
+							<h3>Texto 02
+								<br />mudança de 
+								<br /> mensagem.
+							</h3>
+						</div>
+						<img src="../../assets/images/guine.png" alt="" />
+					</li>
+				</ul>
+				<div class="carousel__prev">
+					<label for="carousel-1"></label>
+					<label for="carousel-2"></label>
+					<!--
+        <label for="carousel-3"></label><label for="carousel-4"></label><label for="carousel-5"></label>
+        -->
+				</div>
+				<div class="carousel__next">
+					<label for="carousel-1"></label>
+					<label for="carousel-2"></label>
+					<!--
+       <label for="carousel-3"></label><label for="carousel-4"></label><label for="carousel-5"></label>
+       -->
+				</div>
+				<div class="carousel__nav">
+					<label for="carousel-1"></label>
+					<label for="carousel-2"></label>
+					<!--
+       <label for="carousel-3"></label><label for="carousel-4"></label><label for="carousel-5"></label>
+       -->
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
-
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
 
@@ -21,7 +62,6 @@
     export default class CoverSection extends Vue {
     }
 </script>
-
 <style lang="scss" scoped>
     @import "../../theme";
 
@@ -42,7 +82,7 @@
             max-height: 100vh;
             height: 100%;
             width: 100%;
-            background-image: url("../../assets/images/guine.png");
+           // background-image: url("../../assets/images/guine.png");
             background-size: cover;
             z-index: -1;
         }
@@ -58,351 +98,241 @@
         }
     }
 
-    .cb-slideshow,
-    .cb-slideshow:after {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0px;
-        left: 0px;
-        z-index: 0;
+%animation-default {
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+@mixin carousel($items, $animation: 'default') {
+  .carousel {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+    > input[type="radio"] {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      top: 0;
+
+      &:checked {
+        ~ .carousel__items .carousel__item,
+        ~ .carousel__prev > label,
+        ~ .carousel__next > label {
+          opacity: 0;
+        }
+      }
+
+      @for $i from 1 through $items {
+        &:nth-child(#{$i}) {
+          &:checked {
+            ~ .carousel__items .carousel__item {
+              @if $animation == 'default' {
+                &:nth-child(#{$i}) {
+                  opacity: 1;
+                }
+              }
+            }
+
+            ~ .carousel__prev {
+              > label {
+                @if $i == 1 {
+                  &:nth-child(#{$items}) {
+                    @extend %animation-default;
+                  }
+                } @else if $i == $items {
+                  &:nth-child(#{$items - 1}) {
+                    @extend %animation-default;
+                  }
+                } @else {
+                  &:nth-child(#{$i - 1}) {
+                    @extend %animation-default;
+                  }
+                }
+              }
+            }
+
+            ~ .carousel__next {
+              > label {
+                @if $i == $items {
+                  &:nth-child(1) {
+                    @extend %animation-default;
+                  }
+                } @else {
+                  &:nth-child(#{$i + 1}) {
+                    @extend %animation-default;
+                  }
+                }
+              }
+            }
+
+            ~ .carousel__nav {
+              > label {
+                &:nth-child(#{$i}) {
+                  background: #ccc;
+                  cursor: default;
+                  pointer-events: none;
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    .cb-slideshow:after {
-        content: '';
-        background: transparent url("../../assets/images/pattern.png") repeat top left;
+
+    &__items {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      width: 100%;
+      height: 600px;
+      position: relative;
     }
-    .cb-slideshow li span {
+
+    &__item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: opacity 2s;
+      -webkit-transition: opacity 2s;
+
+      img {
         width: 100%;
-        height: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    &__prev,
+    &__next {
+      > label {
+        border: 1px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        display: block;
+        width: 40px;
+        height: 40px;
         position: absolute;
-        top: 0px;
-        left: 0px;
-        background-size: cover;
-        background-position: 50% 50%;
-        background-repeat: none;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
         opacity: 0;
-        z-index: 0;
-        -webkit-backface-visibility: hidden;
-        -webkit-animation: imageAnimation 36s linear infinite 0s;
-        -moz-animation: imageAnimation 36s linear infinite 0s;
-        -o-animation: imageAnimation 36s linear infinite 0s;
-        -ms-animation: imageAnimation 36s linear infinite 0s;
-        animation: imageAnimation 36s linear infinite 0s;
-    }
-    .cb-slideshow li div {
-        z-index: 1000;
-        position: absolute;
-        bottom: 30px;
-        left: 0px;
-        width: 100%;
-        text-align: center;
-        opacity: 0;
-        -webkit-animation: titleAnimation 36s linear infinite 0s;
-        -moz-animation: titleAnimation 36s linear infinite 0s;
-        -o-animation: titleAnimation 36s linear infinite 0s;
-        -ms-animation: titleAnimation 36s linear infinite 0s;
-        animation: titleAnimation 36s linear infinite 0s;
-    }
-    .cb-slideshow li div h3 {
-        padding: 0 70px;
-        font-size: $h0FontSize;
-        line-height: $h0FontSize;
-        color: white;
-        max-width: 60%;
-        text-align: left;
         z-index: 2;
-    }
-    .cb-slideshow li:nth-child(1) span { background-image: url("../../assets/images/guine.png") }
-    .cb-slideshow li:nth-child(2) span {
-        background-image: url("../../assets/images/guine.png");
-        -webkit-animation-delay: 6s;
-        -moz-animation-delay: 6s;
-        -o-animation-delay: 6s;
-        -ms-animation-delay: 6s;
-        animation-delay: 6s;
-    }
-    .cb-slideshow li:nth-child(3) span {
-        background-image: url("../../assets/images/guine.png");
-        -webkit-animation-delay: 12s;
-        -moz-animation-delay: 12s;
-        -o-animation-delay: 12s;
-        -ms-animation-delay: 12s;
-        animation-delay: 12s;
-    }
-    .cb-slideshow li:nth-child(4) span {
-        background-image: url("../../assets/images/guine.png");
-        -webkit-animation-delay: 18s;
-        -moz-animation-delay: 18s;
-        -o-animation-delay: 18s;
-        -ms-animation-delay: 18s;
-        animation-delay: 18s;
-    }
-    .cb-slideshow li:nth-child(5) span {
-        background-image: url("../../assets/images/guine.png");
-        -webkit-animation-delay: 24s;
-        -moz-animation-delay: 24s;
-        -o-animation-delay: 24s;
-        -ms-animation-delay: 24s;
-        animation-delay: 24s;
-    }
-    .cb-slideshow li:nth-child(6) span {
-        background-image: url("../../assets/images/guine.png");
-        -webkit-animation-delay: 30s;
-        -moz-animation-delay: 30s;
-        -o-animation-delay: 30s;
-        -ms-animation-delay: 30s;
-        animation-delay: 30s;
-    }
-    .cb-slideshow li:nth-child(2) div {
-        -webkit-animation-delay: 6s;
-        -moz-animation-delay: 6s;
-        -o-animation-delay: 6s;
-        -ms-animation-delay: 6s;
-        animation-delay: 6s;
-    }
-    .cb-slideshow li:nth-child(3) div {
-        -webkit-animation-delay: 12s;
-        -moz-animation-delay: 12s;
-        -o-animation-delay: 12s;
-        -ms-animation-delay: 12s;
-        animation-delay: 12s;
-    }
-    .cb-slideshow li:nth-child(4) div {
-        -webkit-animation-delay: 18s;
-        -moz-animation-delay: 18s;
-        -o-animation-delay: 18s;
-        -ms-animation-delay: 18s;
-        animation-delay: 18s;
-    }
-    .cb-slideshow li:nth-child(5) div {
-        -webkit-animation-delay: 24s;
-        -moz-animation-delay: 24s;
-        -o-animation-delay: 24s;
-        -ms-animation-delay: 24s;
-        animation-delay: 24s;
-    }
-    .cb-slideshow li:nth-child(6) div {
-        -webkit-animation-delay: 30s;
-        -moz-animation-delay: 30s;
-        -o-animation-delay: 30s;
-        -ms-animation-delay: 30s;
-        animation-delay: 30s;
-    }
-    /* Animation for the slideshow images */
-    @-webkit-keyframes imageAnimation { 
-        0% {
-            opacity: 0;
-            -webkit-animation-timing-function: ease-in;
+
+        &:hover,
+        &:focus {
+          opacity: .5 !important;
         }
-        8% {
-            opacity: 1;
-            -webkit-transform: scale(1.05);
-            -webkit-animation-timing-function: ease-out;
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: inherit;
+          height: inherit;
         }
-        17% {
-            opacity: 1;
-            -webkit-transform: scale(1.1);
+
+        &:before {
+          background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%),
+                      linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+          width: 60%;
+          height: 60%;
+          top: 20%;
         }
-        25% {
-            opacity: 0;
-            -webkit-transform: scale(1.1);
-        }
-        100% { opacity: 0 }
-    }
-    @-moz-keyframes imageAnimation { 
-        0% {
-            opacity: 0;
-            -moz-animation-timing-function: ease-in;
-        }
-        8% {
-            opacity: 1;
-            -moz-transform: scale(1.05);
-            -moz-animation-timing-function: ease-out;
-        }
-        17% {
-            opacity: 1;
-            -moz-transform: scale(1.1);
-        }
-        25% {
-            opacity: 0;
-            -moz-transform: scale(1.1);
-        }
-        100% { opacity: 0 }
-    }
-    @-o-keyframes imageAnimation { 
-        0% {
-            opacity: 0;
-            -o-animation-timing-function: ease-in;
-        }
-        8% {
-            opacity: 1;
-            -o-transform: scale(1.05);
-            -o-animation-timing-function: ease-out;
-        }
-        17% {
-            opacity: 1;
-            -o-transform: scale(1.1);
-        }
-        25% {
-            opacity: 0;
-            -o-transform: scale(1.1);
-        }
-        100% { opacity: 0 }
-    }
-    @-ms-keyframes imageAnimation { 
-        0% {
-            opacity: 0;
-            -ms-animation-timing-function: ease-in;
-        }
-        8% {
-            opacity: 1;
-            -ms-transform: scale(1.05);
-            -ms-animation-timing-function: ease-out;
-        }
-        17% {
-            opacity: 1;
-            -ms-transform: scale(1.1);
-        }
-        25% {
-            opacity: 0;
-            -ms-transform: scale(1.1);
-        }
-        100% { opacity: 0 }
-    }
-    @keyframes imageAnimation { 
-        0% {
-            opacity: 0;
-            animation-timing-function: ease-in;
-        }
-        8% {
-            opacity: 1;
-            transform: scale(1.05);
-            animation-timing-function: ease-out;
-        }
-        17% {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-        25% {
-            opacity: 0;
-            transform: scale(1.1);
-        }
-        100% { opacity: 0 }
-    }
-    /* Animation for the title */
-    @-webkit-keyframes titleAnimation { 
-        0% {
-            opacity: 0;
-            -webkit-transform: translateY(200px);
-        }
-        8% {
-            opacity: 1;
-            -webkit-transform: translateY(0px);
-        }
-        17% {
-            opacity: 1;
-            -webkit-transform: scale(1);
-        }
-        19% { opacity: 0 }
-        25% {
-            opacity: 0;
-            -webkit-transform: scale(10);
-        }
-        100% { opacity: 0 }
-    }
-    @-moz-keyframes titleAnimation { 
-        0% {
-            opacity: 0;
-            -moz-transform: translateY(200px);
-        }
-        8% {
-            opacity: 1;
-            -moz-transform: translateY(0px);
-        }
-        17% {
-            opacity: 1;
-            -moz-transform: scale(1);
-        }
-        19% { opacity: 0 }
-        25% {
-            opacity: 0;
-            -moz-transform: scale(10);
-        }
-        100% { opacity: 0 }
-    }
-    @-o-keyframes titleAnimation { 
-        0% {
-            opacity: 0;
-            -o-transform: translateY(200px);
-        }
-        8% {
-            opacity: 1;
-            -o-transform: translateY(0px);
-        }
-        17% {
-            opacity: 1;
-            -o-transform: scale(1);
-        }
-        19% { opacity: 0 }
-        25% {
-            opacity: 0;
-            -o-transform: scale(10);
-        }
-        100% { opacity: 0 }
-    }
-    @-ms-keyframes titleAnimation { 
-        0% {
-            opacity: 0;
-            -ms-transform: translateY(200px);
-        }
-        8% {
-            opacity: 1;
-            -ms-transform: translateY(0px);
-        }
-        17% {
-            opacity: 1;
-            -ms-transform: scale(1);
-        }
-        19% { opacity: 0 }
-        25% {
-            opacity: 0;
-            -webkit-transform: scale(10);
-        }
-        100% { opacity: 0 }
-    }
-    @keyframes titleAnimation { 
-        0% {
-            opacity: 0;
-            transform: translateY(200px);
-        }
-        8% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-        17% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        19% { opacity: 0 }
-        25% {
-            opacity: 0;
-            transform: scale(10);
-        }
-        100% { opacity: 0 }
-    }
-    /* Show at least something when animations not supported */
-    .no-cssanimations .cb-slideshow li span{
-        opacity: 1;
-    }
-    @media screen and (max-width: 1140px) { 
-        .cb-slideshow li div h3 { font-size: 100px }
-    }
-    @media screen and (max-width: 600px) { 
-        .cb-slideshow li div h3 { font-size: 50px }
+      }
     }
 
+    &__prev {
+      > label {
+        left: 2%;
+
+        &:before {
+          left: 35%;
+          top: 20%;
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+        }
+      }
+    }
+
+    &__next {
+      > label {
+        right: 2%;
+
+        &:before {
+          left: 10%;
+          transform: rotate(315deg);
+          -webkit-transform: rotate(315deg);
+        }
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      bottom: 3%;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      z-index: 3;
+
+      > label {
+        border: 1px solid #fff;
+        display: inline-block;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 .125%;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 
 
+.insptext {
+   z-index: 10 !important; 
+   position: absolute; 
+   color: #fff;
+   bottom: 30px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    line-height: $h0FontSize;
+    max-width: 60%;
+    text-align: left;
+    top: 40%;
+    left: 9%;
+    //font-variant: small-caps;
+}
 
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  background: #fcfcfc;
+  margin: 0;
+}
+
+.container {
+  width: 900px;
+  min-width: 900px;
+  margin: 50px auto;
+}
+
+@include carousel(5);
 
 </style>
