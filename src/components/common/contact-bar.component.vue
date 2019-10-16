@@ -25,6 +25,7 @@
     @import "../../theme";
 
     .contactBarComponent {
+        z-index: 3;
         position: fixed;
         bottom: $paddingMenu;
         right: $paddingMenu;
@@ -50,8 +51,6 @@
         div {
             display: flex;
             flex-direction: column;
-
-
         }
     }
 </style>

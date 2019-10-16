@@ -12,6 +12,12 @@
         <div class="action">
             <Button>explorar</Button>
         </div>
+        <div class="yellowShape">
+            <img src="../../assets/shapes/amarelo.png" alt="Yellow Shape">
+        </div>
+        <div class="redShape">
+            <img src="../../assets/shapes/vermelho.png" alt="Red Shape">
+        </div>
     </div>
 </template>
 
@@ -43,6 +49,7 @@
     @import "../../theme";
 
     .peaceSection{
+        position: relative;
         background: $blueColor;
         color: white;
         padding: $paddingMenu*2 $paddingLeft;
@@ -50,7 +57,10 @@
         flex-direction: column;
         align-items: flex-start;
 
+        overflow: hidden;
+
         .header{
+            z-index: 2;
             h1{
                 margin: 0;
                 font-size: $h1FontSize;
@@ -59,6 +69,7 @@
         }
 
         .texts{
+            z-index: 2;
             display: flex;
             align-items: flex-end;
             padding: $paddingMenu 0;
@@ -88,7 +99,26 @@
         }
 
         .action{
+            z-index: 2;
             margin: 32px 0;
+        }
+
+        .yellowShape{
+            z-index: 1;
+            position: absolute;
+            top: 16px;
+            left: -10vw;
+
+            img{
+                width: 700px;
+            }
+        }
+
+        .redShape{
+            z-index: 1;
+            position: absolute;
+            right: -5vw;
+            bottom: -10vw;
         }
     }
 </style>

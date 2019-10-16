@@ -21,6 +21,7 @@
     .footer{
         display: flex;
         align-items: center;
+        z-index: 3;
 
         padding-left: $paddingLeft;
         text-align: left;

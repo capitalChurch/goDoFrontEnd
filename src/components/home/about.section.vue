@@ -39,7 +39,7 @@
 <style lang="scss" scoped>
     @import "../../theme";
 
-    $horizontalPadding: $paddingMenu * 4;
+    $horizontalPadding: $paddingMenu * 2;
     .aboutSection {
         padding: $horizontalPadding 0 $horizontalPadding $paddingLeft;
         background: $yellowColor;
@@ -72,7 +72,7 @@
             img{
                 position: absolute;
                 right: 3vw * 2;
-                bottom: $paddingMenu * 5 * -1;
+                bottom: $paddingMenu * 3 * -1;
                 max-width: calc(450px + 10vw);
             }
         }
