@@ -14,6 +14,6 @@
     }
 </script>
 
-<style style="scss" scoped>
+<style lang="scss">
 
 </style>

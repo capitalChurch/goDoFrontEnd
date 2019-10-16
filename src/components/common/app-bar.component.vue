@@ -2,15 +2,13 @@
     <div class="appBarContainer">
         <div class="appBar">
             <div class="logoContainer">
-                <div class="logoFake">
-                    <span>Logo</span>
-                </div>
+                <Logo/>
             </div>
             <div class="actions">
                 <Button v-if="!isLogged" @click="toggleLogged">Entrar</Button>
                 <IconButton v-if="isLogged" @click="toggleLogged">notifications</IconButton>
                 <Button :flat="true" icon="person_outline" v-if="isLogged" @click="toggleLogged">
-                    <span>{{userInfo.name}}</span>
+                    {{userInfo.name}}
                 </Button>
                 <IconButton :hide="menuOpened" @click="openMenu">menu</IconButton>
             </div>
@@ -28,10 +26,11 @@
     import {Getter} from "vuex-class";
     import Icon from "@/components/common/utils/icon.component.vue";
     import Menu from "@/components/common/menu.component.vue";
+    import Logo from "@/components/common/utils/icons/logo.vue";
 
     @Component({
         name: "AppBar",
-        components: {Icon, IconButton, Button, Menu}
+        components: {Logo, Icon, IconButton, Button, Menu}
     })
     export default class AppBarComponent extends Vue {
         public isLogged: boolean = false;
@@ -44,11 +43,11 @@
             this.isLogged = !this.isLogged;
         }
 
-        public openMenu(){
+        public openMenu() {
             this.menuOpened = true;
         }
 
-        public closeMenu(){
+        public closeMenu() {
             this.menuOpened = false;
         }
     }
@@ -57,36 +56,28 @@
 <style lang="scss" scoped>
     @import "../../theme.scss";
 
-    .appBar {
-        display: flex;
-        padding: 32px;
-        justify-content: space-between;
-        align-items: center;
+    .appBarContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
 
-        .actions {
+        z-index: 9;
+
+        .appBar {
             display: flex;
+            padding: $paddingMenu $paddingMenu $paddingMenu/4 $paddingMenu;
+            justify-content: space-between;
             align-items: center;
+            max-height: $appBarHeight;
 
-            > * {
-                margin: 0 8px;
-            }
-        }
+            .actions {
+                display: flex;
+                align-items: center;
 
-        .logoFake {
-            $size: 70px;
-
-            position: relative;
-            background: $primaryColor;
-            color: white;
-            width: $size;
-            height: $size;
-            border-radius: 50%;
-
-            span {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translateX(-50%) translateY(-50%);
+                > * {
+                    margin: 0 8px;
+                }
             }
         }
     }

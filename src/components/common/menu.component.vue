@@ -46,7 +46,7 @@
         z-index: 999;
         position: absolute;
         cursor: default;
-        background: #E7302Aaa;
+        background: #{$blueColor}cc;
 
         .menu {
             display: flex;

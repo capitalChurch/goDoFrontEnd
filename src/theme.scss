@@ -1,5 +1,23 @@
-$primaryColor: #E7302A;
+$primaryColor: rgb(231, 48, 42);
+$accentColor: white;
 
+$yellowColor: #FDBE23;
+$blueColor: #01B6ED;
+$purpleColor: #604F9D;
+
+$maxWidthBody: 70vw;
+$paddingMenu: 4vh;
+
+$appBarHeight: 110px;
+
+$h0FontSize: 80px;
+$h1FontSize: 64px;
 $h2FontSize: 48px;
 $h3FontSize: 32px;
 $h4FontSize: 24px;
+
+$normalFontSize: 12px;
+
+$shadowIcons: drop-shadow(0 3px 1px -2px rgba(0,0,0,.2));
+
+$paddingLeft: calc((100vw - #{$maxWidthBody}) / 2);
