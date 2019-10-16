@@ -45,6 +45,7 @@
         color: #2c3e50;
 
         .logoChurch{
+            z-index: 3;
             position: fixed;
             bottom: $paddingMenu;
             left: $paddingMenu;
