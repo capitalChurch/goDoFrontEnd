@@ -2,8 +2,8 @@
     <div class="contactBarComponent">
         <span class="contact">Tire suas dúvidas</span>
         <div>
-            <Instagram />
-            <Facebook />
+            <a href="https://www.instagram.com/igrejabcapital/"><Instagram /></a>
+            <a href="https://www.facebook.com/igrejabcapital/"><Facebook /></a>
         </div>
     </div>
 </template>
