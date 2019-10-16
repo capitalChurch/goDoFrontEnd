@@ -2,8 +2,8 @@
     <div class="contactBarComponent">
         <span :class="['contact', {accentColor: !color}, color]">Tire suas dúvidas</span>
         <div>
-            <Instagram :color="color" />
-            <Facebook :color="color" />
+            <a href="https://www.instagram.com/igrejabcapital/"><Instagram :color="color" /></a>
+            <a href="https://www.facebook.com/igrejabcapital/"><Facebook :color="color" /></a>
         </div>
     </div>
 </template>
