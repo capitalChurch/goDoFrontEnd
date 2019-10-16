@@ -110,7 +110,7 @@
             left: -10vw;
 
             img{
-                width: 700px;
+                width: calc(400px + 15vw) ;
             }
         }
 
@@ -119,6 +119,10 @@
             position: absolute;
             right: -5vw;
             bottom: -10vw;
+
+            img{
+                width: calc(200px + 15vw);
+            }
         }
     }
 </style>

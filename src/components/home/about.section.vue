@@ -67,6 +67,7 @@
         }
 
         .image{
+            z-index: 3;
             position: relative;
 
             img{
