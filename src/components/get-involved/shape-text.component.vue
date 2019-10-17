@@ -1,5 +1,5 @@
 <template>
-    <div class="shapeText">
+    <div class="shapeText" @click="handleClick">
         <div class="text" :style="style">{{text}}</div>
         <div class="shape"><slot></slot></div>
     </div>
@@ -28,6 +28,10 @@
                 textAlign: this.textAlignment || 'center'
             };
         }
+
+        public handleClick(){
+            this.$emit('click');
+        }
     }
 </script>
 
@@ -36,6 +40,7 @@
     .shapeText{
         position: relative;
         display: inline-block;
+        cursor: pointer;
 
         .text{
             position: absolute;
@@ -47,6 +52,8 @@
             line-height: $h3FontSize;
             font-weight: 600;
             overflow-wrap: break-word;
+
+            text-transform: lowercase;
         }
 
         .shape{

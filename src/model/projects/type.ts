@@ -9,6 +9,11 @@ export interface project {
     title: string;
     type: typeProject;
     menu: menuProject;
+    coverImage: string;
+    projectImage: string;
+    text: string;
+    getInvolved: string;
+    support: string;
 }
 
 export enum typeProject{

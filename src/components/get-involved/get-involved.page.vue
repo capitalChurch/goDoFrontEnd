@@ -1,10 +1,16 @@
 <template>
     <FixedElements color="purple" class="getInvolved">
         <div class="title">envolva-se</div>
-        <div class="project" v-for="projects in lstProjects">
+        <div class="project" v-for="(projects, i) in lstProjects" :key="i">
             <div class="subtitle">{{projects.title}} <img :src="getUrlImage(projects.imageUrl)" v-if="!!projects.imageUrl" :alt="projects.title"></div>
             <div class="projects">
-                <ShapeText :text="proj.title" :width="proj.menu.width" :text-alignment="proj.menu.textAlignment" v-for="proj in projects.data">
+                <ShapeText
+                        v-for="proj in projects.data"
+                        :key="proj.key"
+                        :text="proj.title"
+                        :width="proj.menu.width"
+                        :text-alignment="proj.menu.textAlignment"
+                        @click="openProject(proj)">
                     <img :src="getUrlShape(proj)" alt="Shape">
                 </ShapeText>
             </div>
@@ -47,6 +53,10 @@
 
         public getUrlImage(imageName: string){
             return require(`../../assets/images/${imageName}.png`);
+        }
+
+        public openProject(proj: project){
+            this.$router.push(`/projects/${proj.key}`);
         }
     }
 </script>

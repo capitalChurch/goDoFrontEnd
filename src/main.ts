@@ -15,6 +15,7 @@ import HubPage from '@/components/Hub.vue';
 import App from '@/App.vue';
 import AboutUsPage from '@/components/about-us/about-us.page.vue';
 import {MdButton, MdIcon} from 'vue-material/dist/components';
+import ProjectPage from '@/components/project/project.page.vue';
 
 Vue.use(VueRouter);
 Vue.use(MdButton);
@@ -30,6 +31,7 @@ export const allRoutes: RouteConfig[] = [
   {path: '/contact', component: ContactPage},
   {path: '/pray', component: PrayPage},
   {path: '/getInvolved', component: GetInvolvedPage},
+  {path: '/projects/:key', component: ProjectPage},
   {path: '/peace', component: PeacePage},
   {path: '/supportUs', component: SupportUsPage},
   {path: '/eventDetail', component: EventDetailPage},
