@@ -21,7 +21,12 @@
     .footer{
         display: flex;
         align-items: center;
-        z-index: 3;
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 100%;
 
         padding-left: $paddingLeft;
         text-align: left;

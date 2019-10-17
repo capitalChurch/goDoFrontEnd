@@ -25,6 +25,6 @@
     @import "../../theme";
 
     .aboutUs{
-        margin-top: calc(#{$paddingMenu} + 60px)
+        margin-top: $marginTop;
     }
 </style>
