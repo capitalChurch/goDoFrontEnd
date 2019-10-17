@@ -307,15 +307,14 @@
    position: absolute; 
    color: #fff;
    background-color: transparent;
-   bottom: 30px;
-    left: 0px;
+   bottom: 40px;
     width: 100%;
     text-align: center;
     font-size: 60px;
     line-height: $h0FontSize;
     max-width: 60%;
     text-align: left;
-    top: 40%;
+    top: 30%;
     left: 9%;
     //font-variant: small-caps;
 }
