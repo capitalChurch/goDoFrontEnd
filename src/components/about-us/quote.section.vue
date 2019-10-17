@@ -28,14 +28,16 @@
         margin-top: $paddingMenu;
         display: flex;
         align-items: center;
+        margin-right: $paddingLeft;
 
+        $heightSection: 500px;
+        min-height: $heightSection;
 
         .image{
             position: relative;
             left: -40px;
             img{
-                height: 55vh;
-                min-height: 500px;
+                max-height: $heightSection;
             }
         }
 
