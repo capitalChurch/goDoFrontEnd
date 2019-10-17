@@ -1,13 +1,13 @@
 <template>
-	<div class="coverSection"><
-		<div class="container">
+	<div class="coverSection md-layout md-gutter">
+		<div class="container md-layout-item">
 			<div class="carousel">
 				<input type="radio" id="carousel-1" name="carousel[]" checked />
 				<input type="radio" id="carousel-2" name="carousel[]" />
 				<input type="radio" id="carousel-3" name="carousel[]" />
 				<input type="radio" id="carousel-4" name="carousel[]" />
 				<input type="radio" id="carousel-5" name="carousel[]" />
-				    <div class="insptext">
+				    <div class="insptext md-display-3">
 							<h3>Seja a
 								<br />resposta para
 								<br /> as necessidades do mundo.
@@ -305,12 +305,12 @@
 .insptext {
    z-index: 10 !important; 
    position: absolute; 
-   color: #fff;
+   color: #fff !important;
    background-color: transparent;
    bottom: 40px;
     width: 100%;
     text-align: center;
-    font-size: 60px;
+   // font-size: 60px;
     line-height: $h0FontSize;
     max-width: 60%;
     text-align: left;
