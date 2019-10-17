@@ -1,29 +1,36 @@
 <template>
-	<div class="coverSection"><
-		<div class="container">
+	<div class="coverSection md-layout md-gutter">
+		<div class="container md-layout-item">
 			<div class="carousel">
 				<input type="radio" id="carousel-1" name="carousel[]" checked />
 				<input type="radio" id="carousel-2" name="carousel[]" />
 				<input type="radio" id="carousel-3" name="carousel[]" />
 				<input type="radio" id="carousel-4" name="carousel[]" />
 				<input type="radio" id="carousel-5" name="carousel[]" />
-				<ul class="carousel__items">
-					<li class="carousel__item">
-						<div class="insptext">
+				    <div class="insptext md-display-3">
 							<h3>Seja a
 								<br />resposta para
 								<br /> as necessidades do mundo.
 							</h3>
 						</div>
+        <ul class="carousel__items">
+          <!--div class="insptext">
+							<h3>Seja a
+								<br />resposta para
+								<br /> as necessidades do mundo.
+							</h3>
+						</div-->
+					<li class="carousel__item">
+						
 						<img src="../../assets/images/guine.png" alt="" />
 					</li>
 					<li class="carousel__item">
-						<div class="insptext">
+						<!--div class="insptext">
 							<h3>Texto 02
 								<br />mudança de 
 								<br /> mensagem.
 							</h3>
-						</div>
+						</div-->
 						<img src="../../assets/images/guine.png" alt="" />
 					</li>
 				</ul>
@@ -298,16 +305,16 @@
 .insptext {
    z-index: 10 !important; 
    position: absolute; 
-   color: #fff;
-   bottom: 30px;
-    left: 0px;
+   color: #fff !important;
+   background-color: transparent;
+   bottom: 40px;
     width: 100%;
     text-align: center;
-    font-size: 60px;
+   // font-size: 60px;
     line-height: $h0FontSize;
     max-width: 60%;
     text-align: left;
-    top: 40%;
+    top: 30%;
     left: 9%;
     //font-variant: small-caps;
 }
