@@ -34,6 +34,7 @@
         min-height: $heightSection;
 
         .image{
+            z-index: 3;
             position: relative;
             left: -40px;
             img{
@@ -45,6 +46,7 @@
             max-width: 850px;
             text-align: left;
             padding-left: $paddingMenu;
+            z-index: 3;
 
             p{
                 $fontSize: $h2FontSize;
