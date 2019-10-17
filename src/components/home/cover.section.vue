@@ -33,21 +33,22 @@
 						</div-->
 						<img src="../../assets/images/guine.png" alt="" />
 					</li>
-				</ul>
+				</ul><!--
 				<div class="carousel__prev">
 					<label for="carousel-1"></label>
 					<label for="carousel-2"></label>
-					<!--
         <label for="carousel-3"></label><label for="carousel-4"></label><label for="carousel-5"></label>
-        -->
+        
 				</div>
+        
 				<div class="carousel__next">
 					<label for="carousel-1"></label>
 					<label for="carousel-2"></label>
-					<!--
+					
        <label for="carousel-3"></label><label for="carousel-4"></label><label for="carousel-5"></label>
-       -->
+      
 				</div>
+        -->
 				<div class="carousel__nav">
 					<label for="carousel-1"></label>
 					<label for="carousel-2"></label>

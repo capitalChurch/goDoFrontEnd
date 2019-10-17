@@ -9,6 +9,7 @@ import ContactPage from '@/components/contact/contact.page.vue';
 import PrayPage from '@/components/pray/pray.page.vue';
 import GetInvolvedPage from '@/components/get-involved/get-involved.page.vue';
 import PeacePage from '@/components/peace/peace.page.vue';
+import MinistriesPage from '@/components/ministries/ministries.page.vue';
 import SupportUsPage from '@/components/support-us/support-us.page.vue';
 import EventDetailPage from './components/event-detail/event-detail.page.vue';
 import HubPage from '@/components/Hub.vue';
@@ -33,6 +34,7 @@ export const allRoutes: RouteConfig[] = [
   {path: '/getInvolved', component: GetInvolvedPage},
   {path: '/projects/:key', component: ProjectPage},
   {path: '/peace', component: PeacePage},
+  {path: '/ministries', component: MinistriesPage},
   {path: '/supportUs', component: SupportUsPage},
   {path: '/eventDetail', component: EventDetailPage},
   {path: '/aboutUs', component: AboutUsPage}
