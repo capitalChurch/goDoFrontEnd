@@ -46,7 +46,7 @@
 
             p{
                 $fontSize: $h2FontSize;
-                font-weight: 500;
+                font-weight: 600;
                 font-size: $fontSize;
                 line-height: $fontSize;
                 color: $purpleColor;
@@ -59,7 +59,7 @@
 
                 font-size: $fontSize;
                 line-height: $fontSize;
-                font-weight: 400;
+                font-weight: 500;
                 color: $primaryColor;
                 padding-left: 16px;
             }
