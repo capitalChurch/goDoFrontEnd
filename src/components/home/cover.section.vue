@@ -7,23 +7,30 @@
 				<input type="radio" id="carousel-3" name="carousel[]" />
 				<input type="radio" id="carousel-4" name="carousel[]" />
 				<input type="radio" id="carousel-5" name="carousel[]" />
-				<ul class="carousel__items">
-					<li class="carousel__item">
-						<div class="insptext">
+				    <div class="insptext">
 							<h3>Seja a
 								<br />resposta para
 								<br /> as necessidades do mundo.
 							</h3>
 						</div>
+        <ul class="carousel__items">
+          <!--div class="insptext">
+							<h3>Seja a
+								<br />resposta para
+								<br /> as necessidades do mundo.
+							</h3>
+						</div-->
+					<li class="carousel__item">
+						
 						<img src="../../assets/images/guine.png" alt="" />
 					</li>
 					<li class="carousel__item">
-						<div class="insptext">
+						<!--div class="insptext">
 							<h3>Texto 02
 								<br />mudança de 
 								<br /> mensagem.
 							</h3>
-						</div>
+						</div-->
 						<img src="../../assets/images/guine.png" alt="" />
 					</li>
 				</ul>
@@ -299,6 +306,7 @@
    z-index: 10 !important; 
    position: absolute; 
    color: #fff;
+   background-color: transparent;
    bottom: 30px;
     left: 0px;
     width: 100%;
