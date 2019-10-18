@@ -304,7 +304,7 @@
 
 
 .insptext {
-   z-index: 10 !important; 
+   z-index: 5 !important; 
    position: absolute; 
    color: #fff !important;
    background-color: transparent;

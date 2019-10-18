@@ -36,11 +36,11 @@
     })
     export default class PeaceSection extends Vue {
         public texts: peaceText[] = [
-            {title: 'Plantar igrejas', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
-            {title: 'Educar a próxima geração', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
-            {title: 'Assistir os pobres', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
-            {title: 'Cuidar dos doentes', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
-            {title: 'Equipar líderes', text: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s' },
+            {title: 'Plantar igrejas', text: 'A plantação de igrejas é a forma de espalhá-lo por todos os lugares' },
+            {title: 'Equipar líderes', text: 'Autoridade para ensinar é uma das marcas da passagem de Jesus pela Terra.' },
+            {title: 'Assistir os pobres', text: 'Jesus não fechou os olhos para as pessoas em situação de pobreza.' },
+            {title: 'Cuidar dos doentes', text: 'Esse é o quarto ponto do nosso plano.' },
+            {title: 'Educar a próxima geração', text: 'Nos comprometemos a equipar líderes servos.' }
         ];
     }
 </script>
