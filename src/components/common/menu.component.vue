@@ -54,6 +54,7 @@
             align-items: center;
             padding: 32px;
             color: white;
+            z-index: 10;
 
             .close {
                 align-self: flex-end;
