@@ -1,7 +1,7 @@
 import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuCristolandia: menuProject = {
-    shape: 'azul2', //tem que ter o arquivo na pasta, assets/shapes/amarelo.png
+    shape: 'green', //tem que ter o arquivo na pasta, assets/shapes/amarelo.png
     textAlignment: 'right',
     width: 92 //defini a quebra de linha dentro do shape, no menu
 };
