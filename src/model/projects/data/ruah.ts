@@ -1,7 +1,8 @@
 import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuRuah: menuProject = {
-    shape: 'purple1', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
+    shape: 'shapeP1', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
+	textAlignment: 'right',
 };
 
 //Tem que adicionar essa constant dentro do arquivo: model/projects/allProjects.ts

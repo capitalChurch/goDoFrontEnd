@@ -1,9 +1,9 @@
 import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuEspanha: menuProject = {
-    shape: 'vermelho', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
+    shape: 'shapeR2', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
     textAlignment: 'right',
-    width: 140 //defini a quebra de linha dentro do shape, no menu,
+    width: 90 //defini a quebra de linha dentro do shape, no menu,
 };
 
 //Tem que adicionar essa constant dentro do arquivo: model/projects/allProjects.ts

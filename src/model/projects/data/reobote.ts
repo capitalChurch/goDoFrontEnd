@@ -1,7 +1,9 @@
 import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuReobote: menuProject = {
-    shape: 'vermelho', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
+    shape: 'shapeY2', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
+	textAlignment: 'right',
+	width: 100 //defini a quebra de linha dentro do shape, no menu
 };
 
 //Tem que adicionar essa constant dentro do arquivo: model/projects/allProjects.ts
