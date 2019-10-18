@@ -44,6 +44,14 @@
     @import "../../theme";
 
     .project{
+        .cover img {
+            height: 445px !important;
+            max-height: 445px !important;
+            min-height: 445px !important;
+            width: 100%;
+            min-width: 100%;
+        }
+
         .infoContainer{
             display: flex;
             flex-wrap: wrap;
