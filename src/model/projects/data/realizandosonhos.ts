@@ -9,7 +9,7 @@ const menuRealizandoSonhos: menuProject = {
 //Tem que adicionar essa constant dentro do arquivo: model/projects/allProjects.ts
 
 export const realizandosonhos: project = {
-    key: 'realizandosonhps', // a key é utilizada na rota(endereço url), não pode ter acentos
+    key: 'realizandosonhos', // a key é utilizada na rota(endereço url), não pode ter acentos
     title: 'Realizando Sonhos',
     type: typeProject.national,
     menu: menuRealizandoSonhos,
