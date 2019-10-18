@@ -24,15 +24,7 @@
 						
 						<img src="../../assets/images/guine.png" alt="" />
 					</li>
-					<li class="carousel__item">
-						<!--div class="insptext">
-							<h3>Texto 02
-								<br />mudança de 
-								<br /> mensagem.
-							</h3>
-						</div-->
-						<img src="../../assets/images/guine.png" alt="" />
-					</li>
+					
 				</ul><!--
 				<div class="carousel__prev">
 					<label for="carousel-1"></label>
@@ -51,8 +43,9 @@
         -->
 				<div class="carousel__nav">
 					<label for="carousel-1"></label>
-					<label for="carousel-2"></label>
 					<!--
+          <label for="carousel-2"></label>
+					
        <label for="carousel-3"></label><label for="carousel-4"></label><label for="carousel-5"></label>
        -->
 				</div>
