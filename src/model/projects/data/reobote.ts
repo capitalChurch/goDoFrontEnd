@@ -3,6 +3,7 @@ import {menuProject, project, typeProject} from '@/model/projects/type';
 const menuReobote: menuProject = {
     shape: 'vermelho', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
 };
+
 //Tem que adicionar essa constant dentro do arquivo: model/projects/allProjects.ts
 
 export const reobote: project = {
