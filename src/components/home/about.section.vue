@@ -4,14 +4,12 @@
             <h1>Go&Do</h1>
 
             <div class="text">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                    into electronic typesetting, remaining essentially unchanged. </p>
-                <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of
-                    Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very
-                    popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes
-                    from a line in section 1.10.32.</p>
+                <p>O Go&Do é uma agência missionária que, com os olhos em Jesus, busca espalhar o amor dele por tosos os cantos 
+                do mundo. Entendemos que fomos chamados para o ide e, portanto, nos movemos para todo lugar, levando a bandeira 
+                de Cristo, que é a resposta para todas as coisas e todas as pessoas</p>
+                <p>Hoje, atuamos em diferentes países e projetos, atendendo diversas faixas etárias, públicos e etinias. Contamos
+                atualmente, com iniciativas nacionais e internacionais que, ainda que com abordagens diferentes, convergem para o
+                mesmo alvo: Jesus</p>
             </div>
 
             <div class="action">
