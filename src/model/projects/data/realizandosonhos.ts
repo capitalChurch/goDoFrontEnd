@@ -1,7 +1,7 @@
 import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuRealizandoSonhos: menuProject = {
-    shape: 'azul2', //tem que ter o arquivo na pasta, assets/shapes/amarelo.png
+    shape: 'shapeB1', //tem que ter o arquivo na pasta, assets/shapes/amarelo.png
     textAlignment: 'right',
     width: 200 //defini a quebra de linha dentro do shape, no menu
 };
@@ -9,7 +9,7 @@ const menuRealizandoSonhos: menuProject = {
 //Tem que adicionar essa constant dentro do arquivo: model/projects/allProjects.ts
 
 export const realizandosonhos: project = {
-    key: 'realizandosonhps', // a key é utilizada na rota(endereço url), não pode ter acentos
+    key: 'realizandosonhos', // a key é utilizada na rota(endereço url), não pode ter acentos
     title: 'Realizando Sonhos',
     type: typeProject.national,
     menu: menuRealizandoSonhos,

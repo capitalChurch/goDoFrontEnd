@@ -5,11 +5,6 @@
                 <Logo :color="color"/>
             </div>
             <div class="actions">
-                <Button v-if="!isLogged" @click="toggleLogged">Entrar</Button>
-                <IconButton v-if="isLogged" @click="toggleLogged" :color="color">notifications</IconButton>
-                <Button :flat="true" icon="person_outline" v-if="isLogged" @click="toggleLogged">
-                    {{userInfo.name}}
-                </Button>
                 <IconButton :hide="menuOpened" @click="openMenu" :color="color">menu</IconButton>
             </div>
         </div>

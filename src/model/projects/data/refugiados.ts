@@ -1,7 +1,7 @@
 import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuRefugiados: menuProject = {
-    shape: 'green', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
+    shape: 'shapeG2', //tem que ter o arquivo na pasta, assets/shapes/purple1.png
     textAlignment: 'right',
     width: 110 //defini a quebra de linha dentro do shape, no menu,
 };
