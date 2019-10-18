@@ -2,7 +2,7 @@ import Vue from 'vue';
 import store from './model/store/store';
 import VueRouter, {RouteConfig} from 'vue-router';
 import HomePage from '@/components/home/home.page.vue';
-import LoginPage from '@/components/user/login/login.page.vue';
+// import LoginPage from '@/components/user/login/login.page.vue';
 import ProfilePage from '@/components/user/profile/profile.page.vue';
 import CreateAccountPage from '@/components/user/create-account/create-account.page.vue';
 import ContactPage from '@/components/contact/contact.page.vue';
@@ -24,9 +24,9 @@ Vue.use(MdIcon);
 Vue.config.productionTip = false;
 
 export const allRoutes: RouteConfig[] = [
-  {path: '/', component: HubPage},
+  {path: '/', component: HomePage},
   {path: '/home', component: HomePage},
-  {path: '/login', component: LoginPage},
+  // {path: '/login', component: LoginPage},
   {path: '/profile', component: ProfilePage},
   {path: '/createAccount', component: CreateAccountPage},
   {path: '/contact', component: ContactPage},
