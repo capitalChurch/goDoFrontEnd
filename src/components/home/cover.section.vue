@@ -42,8 +42,9 @@
 				</div>
         -->
 				<div class="carousel__nav">
-					<label for="carousel-1"></label>
 					<!--
+          <label for="carousel-1"></label>
+					
           <label for="carousel-2"></label>
 					
        <label for="carousel-3"></label><label for="carousel-4"></label><label for="carousel-5"></label>
