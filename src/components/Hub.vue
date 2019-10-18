@@ -17,7 +17,7 @@
         name: 'HubPage'
     })
     export default class HubPage extends Vue{
-        public routes = allRoutes.slice(1);
+        public routes = allRoutes.slice(1).filter(x => x.path.indexOf(':') === -1);
 
         public changeRoute(route: RouteConfig){
             this.$router.push(route.path);
@@ -26,15 +26,28 @@
         public getLabelRoute(path: string): string{
             return path.replace('/', '');
         }
+
+        public created(){
+            if(window.location.hostname.indexOf('igrejacapital.org.br') !== -1)
+                this.$router.push('/home');
+        }
     }
 </script>
 
 <style lang="scss" scoped>
-    ul li{
-        cursor: pointer;
+    .hub{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        ul li{
+            cursor: pointer;
+            padding: 8px;
 
-        &:hover{
-            font-weight: bold;
+            &:hover{
+                font-weight: bold;
+            }
         }
     }
 </style>

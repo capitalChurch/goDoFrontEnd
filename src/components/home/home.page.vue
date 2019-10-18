@@ -1,14 +1,34 @@
 <template>
-    <div class="home">
-        Esta é a Home
-    </div>
+    <FixedElements class="home">
+        <CoverSection></CoverSection>
+        <AboutSection></AboutSection>
+        <PeaceSection></PeaceSection>
+        <SupportSection v-if="false"></SupportSection>
+        <PraySection v-if="false"></PraySection>
+        <EventsSection v-if="false"></EventsSection>
+        <NewsSection v-if="false"></NewsSection>
+    </FixedElements>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
+    import Menu from '@/components/common/menu.component.vue';
+    import AppBar from '@/components/common/app-bar.component.vue';
+    import CoverSection from '@/components/home/cover.section.vue';
+    import AboutSection from '@/components/home/about.section.vue';
+    import PeaceSection from '@/components/home/peace.section.vue';
+    import SupportSection from '@/components/home/support.section.vue';
+    import PraySection from '@/components/home/pray.section.vue';
+    import EventsSection from '@/components/home/events.section.vue';
+    import NewsSection from '@/components/home/news.section.vue';
+    import FixedElements from '@/components/common/fixed-elements.component.vue';
 
     @Component({
-        name: 'HomePage'
+        name: 'HomePage',
+        components: {
+            FixedElements,
+            NewsSection,
+            EventsSection, PraySection, SupportSection, PeaceSection, AboutSection, CoverSection, AppBar, Menu}
     })
     export default class HomePage extends Vue{
     }
