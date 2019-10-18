@@ -8,13 +8,8 @@
                     <span>Go&Do</span>
                     <span>ministérios</span>
                     <span>p.e.a.c.e</span>
+                    <span>envolva-se</span>
                 </div>
-                <span>envolva-se</span>
-                <span>apoie</span>
-                <span>ore</span>
-                <span>eventos</span>
-                <span>notícias</span>
-                <span>viagens</span>
             </div>
         </div>
     </div>
