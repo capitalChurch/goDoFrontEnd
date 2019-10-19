@@ -1,7 +1,9 @@
 <template>
     <div class="acronymComponent">
         <div class="letter">{{letter}}</div>
-        <div class="text">{{text}}</div>
+        <div class="texts">
+            <p v-for="text in texts">{{text}}</p>
+        </div>
     </div>
 </template>
 
@@ -17,7 +19,7 @@
         public letter!: string;
 
         @Prop({required: true})
-        public text!: string;
+        public texts!: string[];
     }
 </script>
 
@@ -41,11 +43,14 @@
             width: 130px;
         }
 
-        .text{
+        .texts{
             padding: 0 $paddingMenu;
             max-width: 350px;
             font-weight: 200;
 
+            p:first-child{
+                margin-top: 0;
+            }
         }
     }
 </style>
