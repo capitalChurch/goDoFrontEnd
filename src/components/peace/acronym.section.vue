@@ -1,6 +1,9 @@
 <template>
     <div class="acronymSection">
         <AcronymComponent v-for="({letter, text}) in letters" :text="text" :letter="letter" />
+        <div class="shapeGreen">
+            <img src="../../assets/shapes/shapeG3.png" alt="Shape Green">
+        </div>
     </div>
 </template>
 
@@ -32,11 +35,24 @@
     @import "../../theme";
 
     .acronymSection{
+        margin-top: $marginTop;
         display: flex;
         flex-flow: row wrap;
 
         text-align: left;
         padding: $marginTop 0;
         color: white;
+
+        position: relative;
+
+        .shapeGreen{
+            z-index: 1;
+            position: absolute;
+
+            width: calc(240px + 10vw);
+
+            top: -30px;
+            right: 15%;
+        }
     }
 </style>

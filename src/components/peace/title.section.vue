@@ -24,9 +24,11 @@
 
     .titleSection{
         text-align: left;
-        margin-top: $paddingMenu;
+        margin-top: $marginTop;
         color: white;
         max-width: 500px;
+        z-index: 5;
+        position: relative;
 
         .title{
             $fontSize: $h0FontSize;
