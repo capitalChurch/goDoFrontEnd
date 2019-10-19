@@ -3,7 +3,7 @@
         <AppBar :color="color"></AppBar>
         <slot/>
         <ContactBar :color="color"/>
-        <div class="logoChurch">
+        <div class="logoChurch" @click="openWebSiteChurch()">
             <ChurchLogo :color="color"/>
         </div>
         <Footer/>
@@ -25,6 +25,10 @@
     export default class FixedElementsComponent extends Vue {
         @Prop({required: false})
         public color!: Color;
+
+        public openWebSiteChurch(){
+            window.location.assign("http://www.igrejacapital.org.br/#/");
+        }
     }
 </script>
 
@@ -36,6 +40,7 @@
         position: fixed;
         bottom: $paddingMenu;
         left: $paddingMenu;
+        cursor: pointer;
 
         img{
             width: 25px;

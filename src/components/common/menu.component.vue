@@ -26,6 +26,7 @@
         public readonly menus: itemMenu[] = [
             {name: "home", path: "/"},
             {name: "go&do", path: "/aboutUs"},
+            {name: "peace", path: "/peace"},
             {name: "envolva-se", path: "/getInvolved"},
         ];
 
@@ -38,7 +39,7 @@
         }
 
         public isActive(obj: itemMenu){
-            return window.location.pathname === obj.path;
+            return window.location.hash === `#${obj.path}`;
         }
     }
 </script>
