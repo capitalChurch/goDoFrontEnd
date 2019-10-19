@@ -23,7 +23,7 @@
     @import "../../theme";
 
     .peace{
-        padding-top: $marginTop;
+        padding: $marginTop $paddingLeft 0 $paddingLeft;
         background: $purpleColor;
     }
 </style>

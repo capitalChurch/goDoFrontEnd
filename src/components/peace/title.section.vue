@@ -20,5 +20,24 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../theme";
 
+    .titleSection{
+        text-align: left;
+        margin-top: $paddingMenu;
+        color: white;
+        max-width: 500px;
+
+        .title{
+            $fontSize: $h0FontSize;
+            font-size: $fontSize;
+            line-height: $fontSize;
+            font-weight: 700;
+            margin: $paddingMenu 0;
+        }
+
+        .text{
+            font-weight: 200;
+        }
+    }
 </style>

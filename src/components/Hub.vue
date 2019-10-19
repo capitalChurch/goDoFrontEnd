@@ -28,7 +28,7 @@
         }
 
         public created(){
-            if(window.location.hostname.indexOf('goando') !== -1)
+            if(window.location.hostname.indexOf('goanddo') !== -1)
                 this.$router.push('/home');
         }
     }

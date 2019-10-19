@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="action">
-            <Button v-if="false">explorar</Button>
+            <Button @click="openPeacePage()">explorar</Button>
         </div>
         <div class="yellowShape">
             <img src="../../assets/shapes/amarelo.png" alt="Yellow Shape">
@@ -35,13 +35,17 @@
         components: {Button}
     })
     export default class PeaceSection extends Vue {
-        public texts: peaceText[] = [
+        public readonly texts: peaceText[] = [
             {title: 'Plantar igrejas', text: 'A plantação de igrejas é a forma de espalhá-lo por todos os lugares' },
             {title: 'Equipar líderes', text: 'Autoridade para ensinar é uma das marcas da passagem de Jesus pela Terra.' },
             {title: 'Assistir os pobres', text: 'Jesus não fechou os olhos para as pessoas em situação de pobreza.' },
             {title: 'Cuidar dos doentes', text: 'Esse é o quarto ponto do nosso plano.' },
             {title: 'Educar a próxima geração', text: 'Nos comprometemos a equipar líderes servos.' }
         ];
+
+        public openPeacePage(){
+            this.$router.push('/peace')
+        }
     }
 </script>
 

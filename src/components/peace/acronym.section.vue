@@ -1,6 +1,6 @@
 <template>
     <div class="acronymSection">
-        <AcronymComponent />
+        <AcronymComponent v-for="({letter, text}) in letters" :text="text" :letter="letter" />
     </div>
 </template>
 
@@ -19,7 +19,11 @@
     })
     export default class AcronymSection extends Vue {
         public readonly letters: eachLetter[] = [
-            {letter: 'p', }
+            {letter: 'p', text: 'O Plano P.E.A.C.E é a uma estratégia espiritual que aderimos dentro de nossos movimentos e projetos missionários. Por meio desse plano, buscamos apresentar Jesus através da transformação da realidade social, econômica e educacional do Brasil e dos países onde nossos projetos se encontram.'},
+            {letter: 'e', text: 'O Plano P.E.A.C.E é a uma estratégia espiritual que aderimos dentro de nossos movimentos e projetos missionários. Por meio desse plano, buscamos apresentar Jesus através da transformação da realidade social, econômica e educacional do Brasil e dos países onde nossos projetos se encontram.'},
+            {letter: 'a', text: 'O Plano P.E.A.C.E é a uma estratégia espiritual que aderimos dentro de nossos movimentos e projetos missionários. Por meio desse plano, buscamos apresentar Jesus através da transformação da realidade social, econômica e educacional do Brasil e dos países onde nossos projetos se encontram.'},
+            {letter: 'c', text: 'O Plano P.E.A.C.E é a uma estratégia espiritual que aderimos dentro de nossos movimentos e projetos missionários. Por meio desse plano, buscamos apresentar Jesus através da transformação da realidade social, econômica e educacional do Brasil e dos países onde nossos projetos se encontram.'},
+            {letter: 'e', text: 'O Plano P.E.A.C.E é a uma estratégia espiritual que aderimos dentro de nossos movimentos e projetos missionários. Por meio desse plano, buscamos apresentar Jesus através da transformação da realidade social, econômica e educacional do Brasil e dos países onde nossos projetos se encontram.'}
         ];
     }
 </script>

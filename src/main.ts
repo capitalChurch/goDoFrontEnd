@@ -1,8 +1,6 @@
 import Vue from 'vue';
-import store from './model/store/store';
 import VueRouter, {RouteConfig} from 'vue-router';
 import HomePage from '@/components/home/home.page.vue';
-// import LoginPage from '@/components/user/login/login.page.vue';
 import ProfilePage from '@/components/user/profile/profile.page.vue';
 import CreateAccountPage from '@/components/user/create-account/create-account.page.vue';
 import ContactPage from '@/components/contact/contact.page.vue';
@@ -17,6 +15,8 @@ import AboutUsPage from '@/components/about-us/about-us.page.vue';
 import {MdButton, MdIcon} from 'vue-material/dist/components';
 import ProjectPage from '@/components/project/project.page.vue';
 import LoginPage from '@/components/user/login/login.page.vue';
+import HubPage from '@/components/Hub.vue';
+import store from '@/model/store/store';
 
 Vue.use(VueRouter);
 Vue.use(MdButton);
@@ -24,7 +24,7 @@ Vue.use(MdIcon);
 Vue.config.productionTip = false;
 
 export const allRoutes: RouteConfig[] = [
-  {path: '/', component: HomePage},
+  {path: '/', component: HubPage},
   {path: '/home', component: HomePage},
   {path: '/login', component: LoginPage},
   {path: '/profile', component: ProfilePage},
