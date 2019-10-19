@@ -13,7 +13,7 @@
             </div>
 
             <div class="action">
-                <Button>explorar</Button>
+                <Button @click="openAboutUsPage()">explorar</Button>
             </div>
         </div>
         <div class="image">
@@ -31,6 +31,9 @@
         components: {Button}
     })
     export default class AboutSection extends Vue {
+        public openAboutUsPage(){
+            this.$router.push('/aboutUs')
+        }
     }
 </script>
 

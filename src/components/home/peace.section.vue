@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="action">
-            <Button>explorar</Button>
+            <Button v-if="false">explorar</Button>
         </div>
         <div class="yellowShape">
             <img src="../../assets/shapes/amarelo.png" alt="Yellow Shape">
@@ -79,6 +79,7 @@
                 display: flex;
                 flex-direction: column;
                 padding: 0 16px;
+                width: 20%;
 
                 span.title{
                     padding-top: 32px;
