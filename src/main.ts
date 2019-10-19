@@ -18,6 +18,8 @@ import LoginPage from '@/components/user/login/login.page.vue';
 import HubPage from '@/components/Hub.vue';
 import store from '@/model/store/store';
 
+export const googleApiKey = "AIzaSyAbwNlwz8ru2CRMfriX9Qvg3-wXb69TUUY";
+
 Vue.use(VueRouter);
 Vue.use(MdButton);
 Vue.use(MdIcon);

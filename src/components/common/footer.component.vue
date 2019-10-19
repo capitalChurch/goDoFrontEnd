@@ -30,7 +30,7 @@
 
         padding-left: $paddingLeft;
         text-align: left;
-        height: $paddingMenu * 2;
+        height: $heightFooter;
         background: $purpleColor;
         color: white;
     }

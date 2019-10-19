@@ -6,7 +6,7 @@
         <div class="logoChurch" @click="openWebSiteChurch()">
             <ChurchLogo :color="color"/>
         </div>
-        <Footer/>
+        <Footer v-if="!hideFooter"/>
     </div>
 </template>
 
@@ -25,6 +25,9 @@
     export default class FixedElementsComponent extends Vue {
         @Prop({required: false})
         public color!: Color;
+
+        @Prop({required: false})
+        public hideFooter!: boolean;
 
         public openWebSiteChurch(){
             window.location.assign("http://www.igrejacapital.org.br/#/");
