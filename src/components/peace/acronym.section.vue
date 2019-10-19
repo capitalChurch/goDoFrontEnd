@@ -29,4 +29,14 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../theme";
+
+    .acronymSection{
+        display: flex;
+        flex-flow: row wrap;
+
+        text-align: left;
+        padding: $marginTop 0;
+        color: white;
+    }
 </style>
