@@ -32,7 +32,7 @@
     @import "../../theme";
 
     .contactBarComponent {
-        z-index: 3;
+        z-index: 12;
         position: fixed;
         bottom: $paddingMenu;
         right: $paddingMenu;

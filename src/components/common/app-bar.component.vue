@@ -75,6 +75,7 @@
             max-height: $appBarHeight;
 
             .goAndDoLogoContainer{
+                z-index: 12;
                 cursor: pointer;
             }
 

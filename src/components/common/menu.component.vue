@@ -52,7 +52,7 @@
         height: 100vh;
         top: 0;
         left: 0;
-        z-index: 999;
+        z-index: 11;
         position: absolute;
         cursor: default;
         background: #{$blueColor}cc;

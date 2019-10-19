@@ -13,7 +13,6 @@
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
     import Menu from '@/components/common/menu.component.vue';
-    import AppBar from '@/components/common/app-bar.component.vue';
     import CoverSection from '@/components/home/cover.section.vue';
     import AboutSection from '@/components/home/about.section.vue';
     import PeaceSection from '@/components/home/peace.section.vue';
@@ -28,7 +27,7 @@
         components: {
             FixedElements,
             NewsSection,
-            EventsSection, PraySection, SupportSection, PeaceSection, AboutSection, CoverSection, AppBar, Menu}
+            EventsSection, PraySection, SupportSection, PeaceSection, AboutSection, CoverSection, Menu}
     })
     export default class HomePage extends Vue{
     }

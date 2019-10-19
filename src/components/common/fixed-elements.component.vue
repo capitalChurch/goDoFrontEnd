@@ -39,7 +39,7 @@
     @import "../../theme";
 
     .logoChurch{
-        z-index: 3;
+        z-index: 12;
         position: fixed;
         bottom: $paddingMenu;
         left: $paddingMenu;
