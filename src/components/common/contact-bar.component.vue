@@ -1,6 +1,6 @@
 <template>
     <div class="contactBarComponent">
-        <span :class="['contact', {accentColor: !color}, color]">Tire suas dúvidas</span>
+        <span :class="['contact', {accentColor: !color}, color]" @click="openContact()">Tire suas dúvidas</span>
         <div>
             <a href="https://www.instagram.com/igrejabcapital/"><Instagram :color="color" /></a>
             <a href="https://www.facebook.com/igrejabcapital/"><Facebook :color="color" /></a>
@@ -21,6 +21,10 @@
     export default class ContactBarComponent extends Vue {
         @Prop({required: false})
         public color!: Color;
+
+        public openContact(): void{
+            this.$router.push('/contact');
+        }
     }
 </script>z
 
