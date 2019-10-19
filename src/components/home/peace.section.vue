@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="action">
-            <Button>explorar</Button>
+            <Button v-if="false">explorar</Button>
         </div>
         <div class="yellowShape">
             <img src="../../assets/shapes/amarelo.png" alt="Yellow Shape">
