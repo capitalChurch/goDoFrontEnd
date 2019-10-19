@@ -22,7 +22,7 @@
                 <p>A igreja que eu vejo investe na preparação de líderes servos, que irão influenciar e conduzir pessoas
                     a cumprirem os propósitos de Deus para suas vidas na Terra.</p>
             </div>
-            <Button>envolva-se</Button>
+            <Button @click="openProjectsPage()">envolva-se</Button>
         </div>
     </div>
 </template>
@@ -36,6 +36,9 @@
         components: {Button}
     })
     export default class ProjectsSection extends Vue {
+        public openProjectsPage(){
+            this.$router.push('/getInvolved');
+        }
     }
 </script>
 

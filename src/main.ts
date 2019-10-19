@@ -17,6 +17,7 @@ import App from '@/App.vue';
 import AboutUsPage from '@/components/about-us/about-us.page.vue';
 import {MdButton, MdIcon} from 'vue-material/dist/components';
 import ProjectPage from '@/components/project/project.page.vue';
+import LoginPage from '@/components/user/login/login.page.vue';
 
 Vue.use(VueRouter);
 Vue.use(MdButton);
@@ -26,7 +27,7 @@ Vue.config.productionTip = false;
 export const allRoutes: RouteConfig[] = [
   {path: '/', component: HomePage},
   {path: '/home', component: HomePage},
-  // {path: '/login', component: LoginPage},
+  {path: '/login', component: LoginPage},
   {path: '/profile', component: ProfilePage},
   {path: '/createAccount', component: CreateAccountPage},
   {path: '/contact', component: ContactPage},

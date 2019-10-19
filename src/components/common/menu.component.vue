@@ -3,13 +3,7 @@
         <div class="menu">
             <IconButton class="close" @click="handleClose">close</IconButton>
             <div class="links">
-                <span>home</span>
-                <div class="aboutLinks">
-                    <span>Go&Do</span>
-                    <span>ministérios</span>
-                    <span>p.e.a.c.e</span>
-                    <span>envolva-se</span>
-                </div>
+                <span v-for="item in menus" @click="openRoute(item)" :class="[{active: isActive(item)}]">{{item.name}}</span>
             </div>
         </div>
     </div>
@@ -19,13 +13,32 @@
     import {Component, Vue} from "vue-property-decorator";
     import IconButton from "@/components/common/utils/icon-button.component.vue";
 
+    interface itemMenu {
+        name: string;
+        path: string;
+    }
+
     @Component({
         name: "Menu",
         components: {IconButton}
     })
     export default class MenuComponent extends Vue {
+        public readonly menus: itemMenu[] = [
+            {name: "home", path: "/"},
+            {name: "go&do", path: "/aboutUs"},
+            {name: "envolva-se", path: "/getInvolved"},
+        ];
+
         public handleClose() {
             this.$emit("onClose");
+        }
+
+        public openRoute(obj: itemMenu){
+            this.$router.push(obj.path);
+        }
+
+        public isActive(obj: itemMenu){
+            return window.location.pathname === obj.path;
         }
     }
 </script>
@@ -64,13 +77,19 @@
                 transform: translateX(25%);
 
                 span {
-                    font-size: $h2FontSize;
+                    $fontSize: $h1FontSize;
+                    font-size: $fontSize;
+                    line-height: $fontSize;
                     font-weight: bold;
-                    padding: 16px 0;
                     cursor: pointer;
 
                     &:hover {
                         color: rgba(255, 255, 255, .8)
+                    }
+
+                    &.active{
+                        color: $yellowColor;
+                        cursor: default;
                     }
                 }
 

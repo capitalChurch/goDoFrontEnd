@@ -1,7 +1,7 @@
 <template>
     <div class="appBarContainer">
         <div class="appBar">
-            <div class="logoContainer">
+            <div @click="openHome()" class="goAndDoLogoContainer">
                 <Logo :color="color"/>
             </div>
             <div class="actions">
@@ -49,6 +49,10 @@
         public closeMenu() {
             this.menuOpened = false;
         }
+
+        public openHome(){
+            this.$router.push('/');
+        }
     }
 </script>
 
@@ -69,6 +73,10 @@
             justify-content: space-between;
             align-items: center;
             max-height: $appBarHeight;
+
+            .goAndDoLogoContainer{
+                cursor: pointer;
+            }
 
             .actions {
                 display: flex;
