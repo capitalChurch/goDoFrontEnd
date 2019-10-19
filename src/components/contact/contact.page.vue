@@ -1,6 +1,12 @@
 <template>
     <div class="contact">
-        esta é a pagina de contato
+        <div class="texts">
+            <div class="title"></div>
+            <div class="text"></div>
+            <div class="info">
+
+            </div>
+        </div>
     </div>
 </template>
 
