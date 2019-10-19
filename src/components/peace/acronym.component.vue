@@ -48,6 +48,8 @@
             max-width: 350px;
             font-weight: 200;
 
+            height: 240px;
+
             p:first-child{
                 margin-top: 0;
             }
