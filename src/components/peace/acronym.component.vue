@@ -45,7 +45,7 @@
 
         .texts{
             padding: 0 $paddingMenu;
-            max-width: 350px;
+            max-width: 320px;
             font-weight: 200;
 
             height: 240px;
