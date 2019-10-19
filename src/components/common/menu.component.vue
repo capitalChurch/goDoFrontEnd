@@ -24,7 +24,7 @@
     })
     export default class MenuComponent extends Vue {
         public readonly menus: itemMenu[] = [
-            {name: "home", path: "/"},
+            {name: "home", path: "/home"},
             {name: "go&do", path: "/aboutUs"},
             {name: "peace", path: "/peace"},
             {name: "envolva-se", path: "/getInvolved"},

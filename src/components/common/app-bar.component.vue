@@ -51,7 +51,7 @@
         }
 
         public openHome(){
-            this.$router.push('/');
+            this.$router.push('/home');
         }
     }
 </script>
@@ -65,7 +65,7 @@
         left: 0;
         width: 100vw;
 
-        z-index: 9;
+        z-index: 10;
 
         .appBar {
             display: flex;
