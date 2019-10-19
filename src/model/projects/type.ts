@@ -7,6 +7,7 @@ export interface menuProject{
 export interface project {
     key: string;
     title: string;
+    colorTitle: 'green' | 'red' | 'yellow' | 'purple' | 'blue';
     type: typeProject;
     menu: menuProject;
     coverImage: string;

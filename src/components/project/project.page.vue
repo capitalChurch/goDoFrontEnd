@@ -4,13 +4,13 @@
             <img :src="urlImage(project.coverImage)" :alt="`Cover ${project.title}`">
         </div>
         <div class="infoContainer">
-            <div class="title">{{project.title}}</div>
+            <div :class="['title', project.colorTitle]">{{project.title}}</div>
             <div class="texts">
                 <div class="text">{{project.text}}</div>
-                <div class="subtitle">Como se envolver</div>
-                <div class="text">{{project.getInvolved}}</div>
-                <div class="subtitle">Como contribuir</div>
-                <div class="text">{{project.support}}</div>
+                <div class="subtitle" v-if="!!project.getInvolved">Como se envolver</div>
+                <div class="text" v-if="!!project.getInvolved">{{project.getInvolved}}</div>
+                <div class="subtitle" v-if="!!project.support">Como contribuir</div>
+                <div class="text" v-if="!!project.support">{{project.support}}</div>
             </div>
             <div class="image">
                 <img :src="urlImage(project.projectImage)" :alt="`Project ${project.title}`">
@@ -62,11 +62,30 @@
             .title{
                 $fontSize: $h0FontSize;
                 width: 100%;
-                color: $primaryColor;
 
                 font-size: $fontSize;
                 line-height: $fontSize;
                 font-weight: 600;
+
+                &.green{
+                    color: $greenColor;
+                }
+
+                &.red{
+                    color: $primaryColor;
+                }
+
+                &.yellow{
+                    color: $yellowColor;
+                }
+
+                &.purple{
+                    color: $purpleColor;
+                }
+
+                &.blue{
+                    color: $blueColor;
+                }
             }
 
             .texts{
