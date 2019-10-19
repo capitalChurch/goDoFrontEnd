@@ -79,6 +79,7 @@
                 display: flex;
                 flex-direction: column;
                 padding: 0 16px;
+                width: 20%;
 
                 span.title{
                     padding-top: 32px;

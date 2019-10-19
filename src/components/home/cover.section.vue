@@ -75,20 +75,6 @@
         padding-bottom: $appBarHeight;
         padding-left: calc((100vw - #{$maxWidthBody}) / 2);
 
-        &:after{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            max-width: 100vw;
-            max-height: 100vh;
-            height: 100%;
-            width: 100%;
-           // background-image: url("../../assets/images/guine.png");
-            background-size: cover;
-            z-index: -1;
-        }
-
         h1{
             font-size: $h0FontSize;
             line-height: $h0FontSize;
@@ -207,72 +193,6 @@
       img {
         width: 100%;
         vertical-align: middle;
-      }
-    }
-
-    &__prev,
-    &__next {
-      > label {
-        border: 1px solid #fff;
-        border-radius: 50%;
-        cursor: pointer;
-        display: block;
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        transition: all .3s ease;
-        -webkit-transition: all .3s ease;
-        opacity: 0;
-        z-index: 2;
-
-        &:hover,
-        &:focus {
-          opacity: .5 !important;
-        }
-
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          width: inherit;
-          height: inherit;
-        }
-
-        &:before {
-          background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%),
-                      linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
-          width: 60%;
-          height: 60%;
-          top: 20%;
-        }
-      }
-    }
-
-    &__prev {
-      > label {
-        left: 2%;
-
-        &:before {
-          left: 35%;
-          top: 20%;
-          transform: rotate(135deg);
-          -webkit-transform: rotate(135deg);
-        }
-      }
-    }
-
-    &__next {
-      > label {
-        right: 2%;
-
-        &:before {
-          left: 10%;
-          transform: rotate(315deg);
-          -webkit-transform: rotate(315deg);
-        }
       }
     }
 
