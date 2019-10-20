@@ -1,11 +1,10 @@
-import {routeEnum} from "@/model/types";
 <template>
     <FixedElements :hide-footer="true" color="purple" class="login">
         <div class="information">
             <div class="title">Login</div>
             <div class="fields">
-                <Field v-model="model.email" placeholder="e-mail"/>
-                <Field :obscure-text="true" v-model="model.password" placeholder="senha"/>
+                <Field :transparent-background="true" v-model="model.email" placeholder="e-mail"/>
+                <Field :transparent-background="true" :obscure-text="true" v-model="model.password" placeholder="senha"/>
             </div>
             <div class="actions">
                 <div class="secondary">
