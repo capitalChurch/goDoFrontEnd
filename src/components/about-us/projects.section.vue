@@ -1,3 +1,4 @@
+import {routeEnum} from "@/model/types";
 <template>
     <div class="projectsContainer">
         <div class="wave">
@@ -28,8 +29,10 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component} from "vue-property-decorator";
-    import Button from '@/components/common/utils/button.component.vue';
+    import {Component, Vue} from "vue-property-decorator";
+    import Button from "@/components/common/utils/button.component.vue";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
 
     @Component({
         name: "ProjectsSection",
@@ -37,7 +40,7 @@
     })
     export default class ProjectsSection extends Vue {
         public openProjectsPage(){
-            this.$router.push('/getInvolved');
+            changeRoute(routeEnum.GetInvolved);
         }
     }
 </script>

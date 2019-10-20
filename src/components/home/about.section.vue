@@ -1,3 +1,4 @@
+import {routeEnum} from "@/model/types";
 <template>
     <div class="aboutSection">
         <div class="info">
@@ -23,8 +24,10 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component} from "vue-property-decorator";
+    import {Component, Vue} from "vue-property-decorator";
     import Button from "@/components/common/utils/button.component.vue";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
 
     @Component({
         name: "AboutSection",
@@ -32,7 +35,7 @@
     })
     export default class AboutSection extends Vue {
         public openAboutUsPage(){
-            this.$router.push('/aboutUs')
+            changeRoute(routeEnum.AboutUs);
         }
     }
 </script>

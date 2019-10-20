@@ -1,3 +1,4 @@
+import {routeEnum} from "@/model/types";
 <template>
     <div class="appBarContainer">
         <div class="appBar">
@@ -17,12 +18,13 @@
     import IconButton from "@/components/common/utils/icon-button.component.vue";
     import Button from "@/components/common/utils/button.component.vue";
     import {GET_USER_INFO} from "@/model/store/constants";
-    import {Person} from "@/model/types";
+    import {Person, routeEnum} from "@/model/types";
     import {Getter} from "vuex-class";
     import Icon from "@/components/common/utils/icon.component.vue";
     import Menu from "@/components/common/menu.component.vue";
     import Logo from "@/components/common/utils/icons/logo.vue";
-    import {Color} from '@/components/common/types';
+    import {Color} from "@/components/common/types";
+    import {changeRoute} from "@/main";
 
     @Component({
         name: "AppBar",
@@ -51,7 +53,7 @@
         }
 
         public openHome(){
-            this.$router.push('/home');
+            changeRoute(routeEnum.Home);
         }
     }
 </script>

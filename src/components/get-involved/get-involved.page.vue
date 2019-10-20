@@ -1,3 +1,4 @@
+import {routeEnum} from "@/model/types";
 <template>
     <FixedElements color="purple" class="getInvolved">
         <div class="title">envolva-se</div>
@@ -24,6 +25,8 @@
     import ShapeText from "@/components/get-involved/shape-text.component.vue";
     import {project, typeProject} from "@/model/projects/type";
     import {allProjects} from "@/model/projects/allProjects";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
 
     interface projects{
         data: project[];
@@ -56,7 +59,7 @@
         }
 
         public openProject(proj: project){
-            this.$router.push(`/projects/${proj.key}`);
+            changeRoute(routeEnum.Project, proj.key);
         }
     }
 </script>

@@ -1,3 +1,4 @@
+import {routeEnum} from "@/model/types";
 <template>
     <FixedElements :hide-footer="true" color="purple" class="login">
         <div class="information">
@@ -8,7 +9,7 @@
             </div>
             <div class="actions">
                 <div class="secondary">
-                    <span class="forgot">esqueci minha senha</span>
+                    <span class="forgot" @click="openForgetPass()">esqueci minha senha</span>
                     <span class="create">Não possui cadastro?</span>
                 </div>
                 <div class="primary">
@@ -36,6 +37,8 @@
     import FixedElements from "@/components/common/fixed-elements.component.vue";
     import Field from "@/components/common/utils/field.component.vue";
     import Button from "@/components/common/utils/button.component.vue";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
 
     interface loginModel {
         email: string;
@@ -51,6 +54,10 @@
             email: "",
             password: ""
         };
+
+        public openForgetPass(){
+            changeRoute(routeEnum.ForgetPassword, this.model.email);
+        }
     }
 </script>
 

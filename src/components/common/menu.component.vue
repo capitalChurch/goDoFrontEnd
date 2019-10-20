@@ -1,3 +1,7 @@
+import {routeEnum} from "@/model/types";
+import {routeEnum} from "@/model/types";
+import {routeEnum} from "@/model/types";
+import {routeEnum} from "@/model/types";
 <template>
     <div class="menuContainer">
         <div class="menu">
@@ -12,10 +16,12 @@
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
     import IconButton from "@/components/common/utils/icon-button.component.vue";
+    import {routeEnum} from "@/model/types";
+    import {allRoutes, changeRoute} from "@/main";
 
     interface itemMenu {
         name: string;
-        path: string;
+        idRoute: routeEnum;
     }
 
     @Component({
@@ -24,10 +30,10 @@
     })
     export default class MenuComponent extends Vue {
         public readonly menus: itemMenu[] = [
-            {name: "home", path: "/home"},
-            {name: "go&do", path: "/aboutUs"},
-            {name: "peace", path: "/peace"},
-            {name: "envolva-se", path: "/getInvolved"},
+            {name: "home", idRoute: routeEnum.Home},
+            {name: "go&do", idRoute: routeEnum.AboutUs},
+            {name: "peace", idRoute: routeEnum.Peace},
+            {name: "envolva-se", idRoute: routeEnum.GetInvolved},
         ];
 
         public handleClose() {
@@ -35,11 +41,12 @@
         }
 
         public openRoute(obj: itemMenu){
-            this.$router.push(obj.path);
+            changeRoute(obj.idRoute);
         }
 
         public isActive(obj: itemMenu){
-            return window.location.hash === `#${obj.path}`;
+            const route = allRoutes.findOrFirst(x => x.id === obj.idRoute);
+            return window.location.hash === `#${route.path}`;
         }
     }
 </script>
