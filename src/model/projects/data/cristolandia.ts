@@ -2,7 +2,7 @@ import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuCristolandia: menuProject = {
     shape: 'green', 
-    textAlignment: 'left',
+    textAlignment: 'right',
     width: 92 
 };
 

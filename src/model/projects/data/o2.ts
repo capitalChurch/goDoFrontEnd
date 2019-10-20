@@ -2,7 +2,7 @@ import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuO2: menuProject = {
     shape: 'shapeR1', 
-	textAlignment: 'left',
+	textAlignment: 'right',
 };
 
 export const o2: project = {

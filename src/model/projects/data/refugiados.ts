@@ -2,8 +2,8 @@ import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuRefugiados: menuProject = {
     shape: 'shapeG2', 
-    textAlignment: 'right',
-    width: 110 
+    textAlignment: 'left',
+    width: 90
 };
 
 export const refugiados: project = {

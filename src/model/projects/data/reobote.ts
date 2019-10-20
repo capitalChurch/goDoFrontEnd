@@ -2,8 +2,8 @@ import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuReobote: menuProject = {
     shape: 'shapeY2', 
-	textAlignment: 'right',
-	width: 100 
+	textAlignment: 'left',
+	width: 150
 };
 
 export const reobote: project = {

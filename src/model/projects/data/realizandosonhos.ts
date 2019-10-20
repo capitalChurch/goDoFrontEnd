@@ -2,7 +2,7 @@ import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuRealizandoSonhos: menuProject = {
     shape: 'shapeB1',
-    textAlignment: 'right',
+    textAlignment: 'center',
     width: 200
 };
 

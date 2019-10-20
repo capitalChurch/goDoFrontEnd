@@ -3,7 +3,7 @@
         <div class="title">envolva-se</div>
         <div class="project" v-for="(projects, i) in lstProjects" :key="i">
             <div class="subtitle">{{projects.title}}
-                <LazyLoadImage :alt="projects.title" :src-full="getUrlImage(projects.imageUrl)" />
+                <LazyLoadImage :alt="projects.title" :src-full="getUrlImage(projects.imageUrl)" v-if="!!projects.imageUrl" />
             </div>
             <div class="projects">
                 <ShapeText

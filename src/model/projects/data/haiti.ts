@@ -1,7 +1,7 @@
 import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuHaiti: menuProject = {
-    shape: 'shapeP1', 
+    shape: 'purple1',
 	textAlignment: 'right',
 	width: 100 
 };
