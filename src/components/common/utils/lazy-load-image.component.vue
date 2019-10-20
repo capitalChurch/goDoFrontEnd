@@ -10,7 +10,7 @@
         components: {}
     })
     export default class LazyLoadImageComponent extends Vue {
-        @Prop({required: true})
+        @Prop({required: false})
         public srcSmall!: string;
 
         @Prop({required: true})

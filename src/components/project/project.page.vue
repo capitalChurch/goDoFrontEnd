@@ -1,7 +1,9 @@
 <template>
     <FixedElements color="purple" class="project">
         <div class="cover">
-            <img :src="urlImage(project.coverImage)" :alt="`Cover ${project.title}`">
+            <LazyLoadImage
+                :src-full="urlImage(project.coverImage)"
+                :alt="`Cover ${project.title}`"/>
         </div>
         <div class="infoContainer">
             <div :class="['title', project.colorTitle]">{{project.title}}</div>
@@ -13,7 +15,9 @@
                 <div class="text" v-if="!!project.support">{{project.support}}</div>
             </div>
             <div class="image">
-                <img :src="urlImage(project.projectImage)" :alt="`Project ${project.title}`">
+                <LazyLoadImage
+                    :src-full="urlImage(project.projectImage)"
+                    :alt="`Project ${project.title}`" />
             </div>
         </div>
     </FixedElements>
@@ -24,10 +28,11 @@
     import FixedElements from '@/components/common/fixed-elements.component.vue';
     import {project} from "@/model/projects/type";
     import {allProjects} from "@/model/projects/allProjects";
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     @Component({
         name: "ProjectPage",
-        components: {FixedElements}
+        components: {LazyLoadImage, FixedElements}
     })
     export default class ProjectPage extends Vue {
         public get project(): project{
@@ -35,7 +40,7 @@
         }
 
         public urlImage(str: string): string{
-            return require(`/static/images/${str}.png`)
+            return `/static/images/${str}.png`;
         }
     }
 </script>

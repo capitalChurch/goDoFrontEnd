@@ -1,9 +1,10 @@
-import {routeEnum} from "@/model/types";
 <template>
     <FixedElements color="purple" class="getInvolved">
         <div class="title">envolva-se</div>
         <div class="project" v-for="(projects, i) in lstProjects" :key="i">
-            <div class="subtitle">{{projects.title}} <img :src="getUrlImage(projects.imageUrl)" v-if="!!projects.imageUrl" :alt="projects.title"></div>
+            <div class="subtitle">{{projects.title}}
+                <LazyLoadImage :alt="projects.title" :src-full="getUrlImage(projects.imageUrl)" />
+            </div>
             <div class="projects">
                 <ShapeText
                         v-for="proj in projects.data"
@@ -12,7 +13,7 @@ import {routeEnum} from "@/model/types";
                         :width="proj.menu.width"
                         :text-alignment="proj.menu.textAlignment"
                         @click="openProject(proj)">
-                    <img :src="getUrlShape(proj)" alt="Shape">
+                    <LazyLoadImage alt="Shape" :src-full="getUrlShape(proj)" />
                 </ShapeText>
             </div>
         </div>
@@ -27,6 +28,7 @@ import {routeEnum} from "@/model/types";
     import {allProjects} from "@/model/projects/allProjects";
     import {changeRoute} from "@/main";
     import {routeEnum} from '@/model/types';
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     interface projects{
         data: project[];
@@ -35,7 +37,7 @@ import {routeEnum} from "@/model/types";
     }
     @Component({
         name: 'GetInvolvedPage',
-        components: {ShapeText, FixedElements}
+        components: {LazyLoadImage, ShapeText, FixedElements}
     })
     export default class GetInvolvedPage extends Vue{
         public lstProjects: projects[] = [
@@ -51,11 +53,11 @@ import {routeEnum} from "@/model/types";
         ];
 
         public getUrlShape(proj: project){
-            return require(`/static/shapes/${proj.menu.shape}.png`);
+            return `/static/shapes/${proj.menu.shape}.png`;
         }
 
         public getUrlImage(imageName: string){
-            return require(`/static/images/${imageName}.png`);
+            return `/static/images/${imageName}.png`;
         }
 
         public openProject(proj: project){
