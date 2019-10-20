@@ -68,6 +68,7 @@
             display: flex;
             flex-direction: column;
             max-width: 500px;
+            padding: 32px;
             >*{
                 position: relative;
                 z-index: 1;
