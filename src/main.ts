@@ -33,7 +33,7 @@ export const allRoutes: routes[] = [
   {id: routeEnum.Login, path: '/user/login', component: LoginPage},
   {id: routeEnum.Profile, path: '/user/profile', component: ProfilePage},
   {id: routeEnum.CreateAccount, path: '/user/createAccount', component: CreateAccountPage},
-  {id: routeEnum.ForgetPassword, path: '/user/forgetPassword/:email', component: ForgetPasswordPage},
+  {id: routeEnum.ForgetPassword, path: '/user/forgetPassword/:email?', component: ForgetPasswordPage},
   {id: routeEnum.Contact, path: '/contact', component: ContactPage},
   {id: routeEnum.Pray, path: '/pray', component: PrayPage},
   {id: routeEnum.GetInvolved, path: '/getInvolved', component: GetInvolvedPage},
