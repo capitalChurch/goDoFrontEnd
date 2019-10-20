@@ -1,5 +1,5 @@
 <template>
-    <md-button :class="[{'md-raised': !flat}, {flat}, {[styleClass]: true}]" @click="handleClick">
+    <md-button :class="[{'md-raised': !flat}, {flat}, {[styleClass]: true}, {[size || 'normal']: true}]" @click="handleClick">
         <Icon v-if="!!icon" class="icon">{{icon}}</Icon>
         <slot>none</slot>
     </md-button>
@@ -9,13 +9,14 @@
     import {Component, Prop, Vue} from "vue-property-decorator";
     import Icon from "@/components/common/utils/icon.component.vue";
 
-    type colors = 'primary' | 'accent';
+    type color = "primary" | "accent";
+    type size = "large" | "normal";
 
     @Component({
-        name: 'ButtonComponent',
+        name: "ButtonComponent",
         components: {Icon}
     })
-    export default class ButtonComponent extends Vue{
+    export default class ButtonComponent extends Vue {
         @Prop({required: false})
         public flat!: boolean;
 
@@ -23,35 +24,53 @@
         public icon!: string;
 
         @Prop({required: false})
-        public color!: colors;
+        public color!: color;
 
-        public handleClick(){
-            this.$emit('click');
+        @Prop({required: false})
+        public size!: size;
+
+        public handleClick() {
+            this.$emit("click");
         }
 
-        public get styleClass(): string{
-            if(this.flat || this.color === 'accent')
-                return 'md-accent';
+        public get styleClass(): string {
+            if (this.flat || this.color === "accent") {
+                return "md-accent";
+            }
 
-            return 'md-primary';
+            return "md-primary";
         }
     }
 </script>
 
 <style lang="scss">
-    .icon{
+    @import "../../../theme";
+
+    .icon {
         padding-right: 8px;
     }
 
-    .flat{
+    .flat {
         text-transform: capitalize;
     }
 
-    .md-button{
+    .md-button.md-raised {
+        text-transform: lowercase;
+        font-size: $h6FontSize;
+        border-radius: 0;
+
         margin: 0;
 
-        .md-ripple .md-button-content{
+        &.normal .md-ripple .md-button-content {
             padding: 0 24px;
+        }
+
+        &.large {
+            height: 30px;
+            .md-ripple .md-button-content {
+                padding: 0 56px;
+                line-height: $h6FontSize * .5;
+            }
         }
     }
 </style>
