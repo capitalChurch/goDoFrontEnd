@@ -51,11 +51,11 @@ import {routeEnum} from "@/model/types";
         ];
 
         public getUrlShape(proj: project){
-            return require(`../../assets/shapes/${proj.menu.shape}.png`);
+            return require(`/static/shapes/${proj.menu.shape}.png`);
         }
 
         public getUrlImage(imageName: string){
-            return require(`../../assets/images/${imageName}.png`);
+            return require(`/static/images/${imageName}.png`);
         }
 
         public openProject(proj: project){

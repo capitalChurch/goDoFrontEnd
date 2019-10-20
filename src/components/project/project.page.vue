@@ -35,7 +35,7 @@
         }
 
         public urlImage(str: string): string{
-            return require(`../../assets/images/${str}.png`)
+            return require(`/static/images/${str}.png`)
         }
     }
 </script>
