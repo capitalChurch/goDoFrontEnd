@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="image">
-            <LazyLoadImage src-full="/static/images/bissau.png" src-small="/static/images/bissauSmall.png" alt="Guiné Bissau"/>
+            <LazyLoadImage src="/static/images/bissau.png" alt="Guiné Bissau"/>
         </div>
     </div>
 </template>

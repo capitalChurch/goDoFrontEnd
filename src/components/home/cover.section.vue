@@ -23,8 +23,7 @@
 					<li class="carousel__item">
 						<LazyLoadImageComponent
 								alt="Guine"
-								src-small="/static/images/guineSmall.png"
-								src-full="/static/images/guine.png"/>
+								src="/static/images/guine.png"/>
 					</li>
 					
 				</ul><!--

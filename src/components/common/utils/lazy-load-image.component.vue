@@ -1,5 +1,5 @@
 <template>
-    <img :alt="alt" ref="imageTag">
+    <img :alt="alt" ref="imageTag" :class="[{loading}, 'missionecas']">
 </template>
 
 <script lang="ts">
@@ -10,27 +10,26 @@
         components: {}
     })
     export default class LazyLoadImageComponent extends Vue {
-        @Prop({required: false})
-        public srcSmall!: string;
+        public loading: boolean = true;
 
         @Prop({required: true})
-        public srcFull!: string;
-
-        @Prop({required: false})
-        public srcMedium!: string;
+        public src!: string;
 
         @Prop({required: true})
         public alt!: string;
 
         public created(){
-            const {srcSmall, srcMedium, srcFull} = this;
-            const images = [srcSmall, srcMedium, srcFull].filter(x => !!x);
+            const {src} = this;
+
+            const images = ['Small', 'Medium', ''].map(s => src.replace(/\./, `${s}.`));
             this.loadImages(images);
         }
 
         public loadImages(lstSrc: string[], index: number = 0): void{
-            if(lstSrc.length <= index)
+            if(lstSrc.length <= index){
+                this.loading = false;
                 return;
+            }
 
             const image = new Image();
 
@@ -40,10 +39,15 @@
                 this.loadImages(lstSrc, ++index);
             };
 
+            image.onerror = () => this.loadImages(lstSrc, ++index);
+
             image.src = lstSrc[index];
         }
     }
 </script>
 
 <style lang="scss" scoped>
+    .loading{
+        filter: blur(4px);
+    }
 </style>

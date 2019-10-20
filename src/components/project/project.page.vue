@@ -2,7 +2,7 @@
     <FixedElements color="purple" class="project">
         <div class="cover">
             <LazyLoadImage
-                :src-full="urlImage(project.coverImage)"
+                :src="urlImage(project.coverImage)"
                 :alt="`Cover ${project.title}`"/>
         </div>
         <div class="infoContainer">
@@ -16,7 +16,7 @@
             </div>
             <div class="image">
                 <LazyLoadImage
-                    :src-full="urlImage(project.projectImage)"
+                    :src="urlImage(project.projectImage)"
                     :alt="`Project ${project.title}`" />
             </div>
         </div>
@@ -39,6 +39,10 @@
             return allProjects.find(x => x.key === this.$route.params.key) || allProjects[0];
         }
 
+        public urlSmallImage(str: string): string{
+            return this.urlImage(`${str}small`);
+        }
+
         public urlImage(str: string): string{
             return `/static/images/${str}.png`;
         }
@@ -50,11 +54,10 @@
 
     .project{
         .cover img {
-            height: 445px !important;
-            max-height: 445px !important;
-            min-height: 445px !important;
-            width: 100%;
-            min-width: 100%;
+            object-fit: cover;
+            object-position: 0 -20px;
+            height: 445px;
+            width: 100vw;
         }
 
         .infoContainer{
