@@ -2,10 +2,10 @@ import {routeEnum} from "@/model/types";
 <template>
     <div class="projectsContainer">
         <div class="wave">
-            <img src="../../assets/shapes/blueWave.png" alt="Wave">
+            <img src="/static/shapes/blueWave.png" alt="Wave">
         </div>
         <div class="greenShape">
-            <img src="../../assets/shapes/green.png" alt="Green Shape">
+            <img src="/static/shapes/green.png" alt="Green Shape">
         </div>
         <div class="projects">
             <div class="title">Ministérios</div>

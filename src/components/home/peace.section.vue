@@ -1,4 +1,3 @@
-import {routeEnum} from "@/model/types";
 <template>
     <div class="peaceSection">
         <div class="header">
@@ -14,10 +13,10 @@ import {routeEnum} from "@/model/types";
             <Button @click="openPeacePage()">explorar</Button>
         </div>
         <div class="yellowShape">
-            <img src="../../assets/shapes/amarelo.png" alt="Yellow Shape">
+            <img src="/static/shapes/amarelo.png" alt="Yellow Shape">
         </div>
         <div class="redShape">
-            <img src="../../assets/shapes/vermelho.png" alt="Red Shape">
+            <img src="/static/shapes/vermelho.png" alt="Red Shape">
         </div>
     </div>
 </template>

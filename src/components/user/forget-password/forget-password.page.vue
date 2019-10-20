@@ -8,11 +8,11 @@
         </div>
         
         <div class="blueShape">
-            <img src="../../../assets/shapes/shapeB4.png" alt="Blue Shape">
+            <img src="/static/shapes/shapeB4.png" alt="Blue Shape">
         </div>
         
         <div class="purpleShape">
-            <img src="../../../assets/shapes/shapeP4.png" alt="Purple Shape">
+            <img src="/static/shapes/shapeP4.png" alt="Purple Shape">
         </div>
     </FixedElements>
 </template>

@@ -21,8 +21,10 @@
 							</h3>
 						</div-->
 					<li class="carousel__item">
-						
-						<img src="../../assets/images/guine.png" alt="" />
+						<LazyLoadImageComponent
+								alt="Guine"
+								src-small="/static/images/guineSmall.png"
+								src-full="/static/images/guine.png"/>
 					</li>
 					
 				</ul><!--
@@ -56,10 +58,11 @@
 </template>
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
+	import LazyLoadImageComponent from '@/components/common/utils/lazy-load-image.component.vue';
 
     @Component({
         name: "CoverSection",
-        components: {}
+        components: {LazyLoadImageComponent}
     })
     export default class CoverSection extends Vue {
     }

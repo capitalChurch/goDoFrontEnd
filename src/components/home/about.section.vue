@@ -1,4 +1,3 @@
-import {routeEnum} from "@/model/types";
 <template>
     <div class="aboutSection">
         <div class="info">
@@ -18,7 +17,7 @@ import {routeEnum} from "@/model/types";
             </div>
         </div>
         <div class="image">
-            <img src="../../assets/images/bissau.png" alt="Pr. Gilberto e Thuka Wegerman">
+            <LazyLoadImage src-full="/static/images/bissau.png" src-small="/static/images/bissauSmall.png" alt="Guiné Bissau"/>
         </div>
     </div>
 </template>
@@ -28,10 +27,11 @@ import {routeEnum} from "@/model/types";
     import Button from "@/components/common/utils/button.component.vue";
     import {changeRoute} from "@/main";
     import {routeEnum} from '@/model/types';
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     @Component({
         name: "AboutSection",
-        components: {Button}
+        components: {LazyLoadImage, Button}
     })
     export default class AboutSection extends Vue {
         public openAboutUsPage(){
@@ -78,6 +78,7 @@ import {routeEnum} from "@/model/types";
                 position: absolute;
                 right: 3vw * 2;
                 bottom: $paddingMenu * 3 * -1;
+                min-width: calc(450px + 10vw);
                 max-width: calc(450px + 10vw);
             }
         }

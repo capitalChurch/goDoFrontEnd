@@ -23,10 +23,10 @@
             </div>
         </div>
         <div class="yellowShape">
-            <img src="../../../assets/shapes/shapeY5.png" alt="Yellow Shape">
+            <img src="/static/shapes/shapeY5.png" alt="Yellow Shape">
         </div>
         <div class="redShape">
-            <img src="../../../assets/shapes/shapeR4.png" alt="Red Shape">
+            <img src="/static/shapes/shapeR4.png" alt="Red Shape">
         </div>
     </FixedElements>
 </template>

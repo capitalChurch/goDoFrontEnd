@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="image">
-            <img src="../../assets/images/adolescenteBrincando.png" alt="Adolescente brincando na rua">
+            <img src="/static/images/adolescenteBrincando.png" alt="Adolescente brincando na rua">
         </div>
     </div>
 </template>
