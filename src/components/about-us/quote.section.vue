@@ -1,7 +1,7 @@
 <template>
     <div class="quoteSection">
         <div class="image">
-            <img src="/static/images/gilberto.png" alt="Pr. Gilberto Wegermann">
+            <LazyLoadImage src="/static/images/gilberto.png" alt="Pr. Gilberto Wegermann" />
         </div>
         <div class="quote">
             <p>“Ele morreu, e pela sua morte encontramos vida. Ele ressuscitou, e pelo seu amor espalhamos as boas novas”.</p>
@@ -12,10 +12,11 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     @Component({
         name: "QuoteSection",
-        components: {}
+        components: {LazyLoadImage}
     })
     export default class QuoteSection extends Vue {
     }
@@ -38,6 +39,7 @@
             position: relative;
             left: -40px;
             img{
+                min-height: $heightSection;
                 max-height: $heightSection;
             }
         }

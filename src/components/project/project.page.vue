@@ -2,6 +2,7 @@
     <FixedElements color="purple" class="project">
         <div class="cover">
             <LazyLoadImage
+                    :style="{objectPosition: project.coverPosition}"
                 :src="urlImage(project.coverImage)"
                 :alt="`Cover ${project.title}`"/>
         </div>
@@ -55,7 +56,6 @@
     .project{
         .cover img {
             object-fit: cover;
-            object-position: 0 -20px;
             height: 445px;
             width: 100vw;
         }
@@ -67,9 +67,13 @@
             padding: $paddingMenu*2 $paddingLeft;
             text-align: left;
 
+            $width: 480px;
+            .title, .texts{
+                width: $width;
+            }
             .title{
-                $fontSize: $h0FontSize;
                 width: 100%;
+                $fontSize: $h0FontSize;
 
                 font-size: $fontSize;
                 line-height: $fontSize;
@@ -97,7 +101,6 @@
             }
 
             .texts{
-                max-width: 30vw;
                 color: $darkPurpleColor;
 
                 .text{
@@ -118,10 +121,8 @@
                 }
             }
 
-            .image{
-                img{
-                    width: calc(300px + 10vw);
-                }
+            .image img{
+                width: calc(300px + 10vw);
             }
         }
 
