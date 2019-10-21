@@ -1,5 +1,5 @@
 <template>
-    <img :alt="alt" ref="imageTag" :class="[{loading}, 'missionecas']">
+    <img :alt="alt" ref="imageTag" :class="[{loading: loadingSecond}, 'missionecas']">
 </template>
 
 <script lang="ts">
@@ -10,7 +10,7 @@
         components: {}
     })
     export default class LazyLoadImageComponent extends Vue {
-        public loading: boolean = true;
+        public loadingSecond: boolean = false;
 
         @Prop({required: true})
         public src!: string;
@@ -26,14 +26,13 @@
         }
 
         public loadImages(lstSrc: string[], index: number = 0): void{
-            if(lstSrc.length <= index){
-                this.loading = false;
+            if(lstSrc.length <= index)
                 return;
-            }
 
             const image = new Image();
 
             image.onload = () => {
+                this.loadingSecond = index === 0;
                 const el = (this.$refs.imageTag as any);
                 el.src = lstSrc[index];
                 this.loadImages(lstSrc, ++index);
