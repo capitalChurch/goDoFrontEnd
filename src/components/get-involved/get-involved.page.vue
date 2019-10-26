@@ -1,20 +1,22 @@
 <template>
-    <FixedElements color="purple" class="getInvolved">
-        <div class="title">envolva-se</div>
-        <div class="project" v-for="(projects, i) in lstProjects" :key="i">
-            <div class="subtitle">{{projects.title}}
-                <LazyLoadImage :alt="projects.title" :src="getUrlImage(projects.imageUrl)" v-if="!!projects.imageUrl" />
-            </div>
-            <div class="projects">
-                <ShapeText
-                        v-for="proj in projects.data"
-                        :key="proj.key"
-                        :text="proj.title"
-                        :width="proj.menu.width"
-                        :text-alignment="proj.menu.textAlignment"
-                        @click="openProject(proj)">
-                    <LazyLoadImage alt="Shape" :src="getUrlShape(proj)" />
-                </ShapeText>
+    <FixedElements color="purple" class="getInvolvedContainer">
+        <div class="getInvolved">
+            <div class="title">envolva-se</div>
+            <div class="project" v-for="(projects, i) in lstProjects" :key="i">
+                <div class="subtitle">{{projects.title}}
+                    <LazyLoadImage :alt="projects.title" :src="getUrlImage(projects.imageUrl)" v-if="!!projects.imageUrl" />
+                </div>
+                <div class="projects">
+                    <ShapeText
+                            v-for="proj in projects.data"
+                            :key="proj.key"
+                            :text="proj.title"
+                            :width="proj.menu.width"
+                            :text-alignment="proj.menu.textAlignment"
+                            @click="openProject(proj)">
+                        <LazyLoadImage alt="Shape" :src="getUrlShape(proj)" />
+                    </ShapeText>
+                </div>
             </div>
         </div>
     </FixedElements>
@@ -69,39 +71,42 @@
 <style lang="scss" scoped>
     @import "../../theme";
 
-    .getInvolved{
-        margin-top: $marginTop;
-        padding: $paddingMenu $paddingLeft;
-        text-align: left;
+    .getInvolvedContainer{
+        padding-top: $marginTop;
 
-        .title{
-            $fontSize: $h1FontSize;
+        .getInvolved{
+            padding: $paddingMenu $paddingLeft;
+            text-align: left;
 
-            color: $purpleColor;
-            font-size: $fontSize;
-            line-height: $fontSize;
-            font-weight: 700;
-        }
+            .title{
+                $fontSize: $h1FontSize;
 
-        .subtitle{
-            $fontSize: $h6FontSize;
-
-            color: $purpleColor;
-            text-transform: uppercase;
-            font-size: $fontSize;
-            line-height: $fontSize;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-
-            vertical-align: middle;
-            img{
-                padding-left: 8px;
-                height: $fontSize * 1.4;
+                color: $purpleColor;
+                font-size: $fontSize;
+                line-height: $fontSize;
+                font-weight: 700;
             }
-        }
 
-        .projects{
-            padding: $paddingMenu*2 0;
+            .subtitle{
+                $fontSize: $h6FontSize;
+
+                color: $purpleColor;
+                text-transform: uppercase;
+                font-size: $fontSize;
+                line-height: $fontSize;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+
+                vertical-align: middle;
+                img{
+                    padding-left: 8px;
+                    height: $fontSize * 1.4;
+                }
+            }
+
+            .projects{
+                padding: $paddingMenu*2 0;
+            }
         }
     }
 </style>

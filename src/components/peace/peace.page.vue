@@ -1,8 +1,10 @@
 <template>
     <div class="peaceContainer">
-        <FixedElements color="purple" class="peace">
-            <TitleSection></TitleSection>
-            <AcronymSection></AcronymSection>
+        <FixedElements color="purple">
+            <div class="peace">
+                <TitleSection></TitleSection>
+                <AcronymSection></AcronymSection>
+            </div>
         </FixedElements>
         <div class="shapeBlue">
             <img src="/static/shapes/shapeB3.png" alt="Shape Blue">
@@ -41,7 +43,7 @@
         width: calc(200px + 10vw);
     }
 
-    .shapeYellow{
+    .shapeYellow {
         z-index: 2;
         position: absolute;
         top: 35vh;
@@ -49,7 +51,7 @@
         width: calc(80px + 10vw);
     }
 
-    .shapeRed{
+    .shapeRed {
         z-index: 0;
         position: absolute;
         left: 0;
@@ -61,6 +63,7 @@
     .peace {
         padding: $marginTop $paddingLeft 0 $paddingLeft;
         background: $purpleColor;
+
     }
 </style>
 

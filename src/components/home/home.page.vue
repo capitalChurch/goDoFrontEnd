@@ -3,7 +3,7 @@
         <CoverSection></CoverSection>
         <AboutSection></AboutSection>
         <PeaceSection></PeaceSection>
-        <SupportSection v-if="false"></SupportSection>
+        <SupportSection></SupportSection>
         <PraySection v-if="false"></PraySection>
         <EventsSection v-if="false"></EventsSection>
         <NewsSection v-if="false"></NewsSection>

@@ -22,9 +22,7 @@
         display: flex;
         align-items: center;
         z-index: 1;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        position: relative;
         width: 100vw;
         max-width: 100%;
 

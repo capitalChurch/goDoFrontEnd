@@ -90,6 +90,7 @@
                 span.title{
                     padding-top: 32px;
                     max-height: 35vh;
+                    font-weight: 700;
                     font-size: $h3FontSize;
                     line-height: $h3FontSize;
                     writing-mode: vertical-rl;
