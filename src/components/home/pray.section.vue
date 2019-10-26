@@ -11,7 +11,9 @@
                 <p>Suspendisse fermentum euismod turpis sed condimentum. Duis dictum eget libero non gravida. Nam gravida metus eget enim scelerisque, vitae condimentum nulla auctor. Etiam eu justo dictum, condimentum turpis id, sollicitudin erat. Praesent sed lorem erat. Fusce ullamcorper bibendum vulputate.</p>
             </div>
         </div>
-        <Button color="blue">explorar</Button>
+        <div class="action">
+            <Button color="blue">explorar</Button>
+        </div>
         <div class="image">
             <LazyLoadImage src="/static/shapes/world.png" alt="World Shpa" />
         </div>
@@ -79,6 +81,10 @@
             }
         }
 
+        .action{
+            padding: $paddingMenu 0;
+        }
+
         .image{
             position: absolute;
             bottom: 0;
@@ -86,7 +92,7 @@
 
             transform: translate(50%, 20%);
             img{
-                max-width: calc(500px + 10vw);
+                max-width: calc(500px + 20vw);
             }
         }
     }

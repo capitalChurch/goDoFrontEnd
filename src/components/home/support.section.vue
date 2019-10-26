@@ -10,7 +10,6 @@
         <div class="image">
             <LazyLoadImage src="/static/images/support.png" alt="Support" />
         </div>
-
         <div class="purpleShape">
             <LazyLoadImage src="/static/shapes/shapeP5.png " alt="Purple Shape" />
         </div>
@@ -69,6 +68,7 @@
                 width: calc(300px + 15vw);
             }
         }
+
 
         .purpleShape{
             position: absolute;
