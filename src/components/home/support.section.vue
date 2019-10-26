@@ -36,7 +36,7 @@
     $horizontalPadding: $paddingMenu * 2;
     .support{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         position: relative;
 
@@ -57,11 +57,14 @@
             .text{
                 margin: $paddingMenu 0;
                 max-width: 450px;
-                font-weight: 200;
+                font-weight: 500;
+                font-size: $normalFontSize;
+                line-height: $normalFontSize * 1.3;
             }
         }
 
         .image{
+            padding-right: 6vw;
             img{
                 width: calc(300px + 15vw);
             }
@@ -71,6 +74,7 @@
             position: absolute;
             bottom: -30px;
             left: -10px;
+            z-index: 1;
 
             img{
                 max-width: 10vw;

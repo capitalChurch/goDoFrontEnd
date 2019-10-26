@@ -9,7 +9,7 @@
     import {Component, Prop, Vue} from "vue-property-decorator";
     import Icon from "@/components/common/utils/icon.component.vue";
 
-    type color = "primary" | "accent";
+    type color = "primary" | "accent" | "blue";
     type size = "large" | "normal";
 
     @Component({
@@ -38,6 +38,9 @@
                 return "md-accent";
             }
 
+            if(!!this.color)
+                return this.color;
+
             return "md-primary";
         }
     }
@@ -60,6 +63,11 @@
         border-radius: 0;
 
         margin: 0;
+
+        &.blue.md-theme-default.md-raised{
+            color: white;
+            background-color: $blueColor;
+        }
 
         &.normal .md-ripple .md-button-content {
             padding: 0 24px;

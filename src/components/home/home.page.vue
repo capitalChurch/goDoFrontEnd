@@ -4,7 +4,7 @@
         <AboutSection></AboutSection>
         <PeaceSection></PeaceSection>
         <SupportSection></SupportSection>
-        <PraySection v-if="false"></PraySection>
+        <PraySection></PraySection>
         <EventsSection v-if="false"></EventsSection>
         <NewsSection v-if="false"></NewsSection>
     </FixedElements>
