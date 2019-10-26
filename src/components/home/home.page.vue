@@ -5,7 +5,7 @@
         <PeaceSection></PeaceSection>
         <SupportSection></SupportSection>
         <PraySection></PraySection>
-        <EventsSection v-if="false"></EventsSection>
+        <EventsSection></EventsSection>
         <NewsSection v-if="false"></NewsSection>
     </FixedElements>
 </template>
