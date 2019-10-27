@@ -38,7 +38,7 @@
     .shapeBlue {
         z-index: 2;
         position: absolute;
-        top: 0;
+        top: -30px;
         left: calc(100px + 40%);
         width: calc(200px + 10vw);
     }

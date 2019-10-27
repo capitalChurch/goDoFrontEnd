@@ -83,7 +83,7 @@
 
         .event{
             $horizontalPadding: 48px;
-            $maxWidth: 280px;
+            $maxWidth: 290px;
 
             display: flex;
             flex-direction: column;
@@ -123,9 +123,10 @@
             }
 
             .text{
+                padding-top: 8px;
                 max-width: 200px;
-
                 margin-bottom: 54px;
+                font-weight: 200;
             }
 
             .action{
