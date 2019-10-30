@@ -1,7 +1,10 @@
 <template>
     <FixedElements color="purple" class="project">
         <div class="cover">
-            <img :src="urlImage(project.coverImage)" :alt="`Cover ${project.title}`">
+            <LazyLoadImage
+                    :style="{objectPosition: project.coverPosition}"
+                :src="urlImage(project.coverImage)"
+                :alt="`Cover ${project.title}`"/>
         </div>
         <div class="infoContainer">
             <div :class="['title', project.colorTitle]">{{project.title}}</div>
@@ -13,7 +16,9 @@
                 <div class="text" v-if="!!project.support">{{project.support}}</div>
             </div>
             <div class="image">
-                <img :src="urlImage(project.projectImage)" :alt="`Project ${project.title}`">
+                <LazyLoadImage
+                    :src="urlImage(project.projectImage)"
+                    :alt="`Project ${project.title}`" />
             </div>
         </div>
     </FixedElements>
@@ -24,18 +29,23 @@
     import FixedElements from '@/components/common/fixed-elements.component.vue';
     import {project} from "@/model/projects/type";
     import {allProjects} from "@/model/projects/allProjects";
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     @Component({
         name: "ProjectPage",
-        components: {FixedElements}
+        components: {LazyLoadImage, FixedElements}
     })
     export default class ProjectPage extends Vue {
         public get project(): project{
             return allProjects.find(x => x.key === this.$route.params.key) || allProjects[0];
         }
 
+        public urlSmallImage(str: string): string{
+            return this.urlImage(`${str}small`);
+        }
+
         public urlImage(str: string): string{
-            return require(`../../assets/images/${str}.png`)
+            return `/static/images/${str}.png`;
         }
     }
 </script>
@@ -45,11 +55,9 @@
 
     .project{
         .cover img {
-            height: 445px !important;
-            max-height: 445px !important;
-            min-height: 445px !important;
-            width: 100%;
-            min-width: 100%;
+            object-fit: cover;
+            height: 445px;
+            width: 100vw;
         }
 
         .infoContainer{
@@ -59,9 +67,13 @@
             padding: $paddingMenu*2 $paddingLeft;
             text-align: left;
 
+            $width: 480px;
+            .title, .texts{
+                width: $width;
+            }
             .title{
-                $fontSize: $h0FontSize;
                 width: 100%;
+                $fontSize: $h0FontSize;
 
                 font-size: $fontSize;
                 line-height: $fontSize;
@@ -89,7 +101,6 @@
             }
 
             .texts{
-                max-width: 30vw;
                 color: $darkPurpleColor;
 
                 .text{
@@ -110,10 +121,8 @@
                 }
             }
 
-            .image{
-                img{
-                    width: calc(300px + 10vw);
-                }
+            .image img{
+                width: calc(300px + 10vw);
             }
         }
 

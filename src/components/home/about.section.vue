@@ -17,22 +17,25 @@
             </div>
         </div>
         <div class="image">
-            <img src="../../assets/images/bissau.png" alt="Pr. Gilberto e Thuka Wegerman">
+            <LazyLoadImage src="/static/images/bissau.png" alt="Guiné Bissau"/>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import {Vue, Component} from "vue-property-decorator";
+    import {Component, Vue} from "vue-property-decorator";
     import Button from "@/components/common/utils/button.component.vue";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     @Component({
         name: "AboutSection",
-        components: {Button}
+        components: {LazyLoadImage, Button}
     })
     export default class AboutSection extends Vue {
         public openAboutUsPage(){
-            this.$router.push('/aboutUs')
+            changeRoute(routeEnum.AboutUs);
         }
     }
 </script>
@@ -75,6 +78,7 @@
                 position: absolute;
                 right: 3vw * 2;
                 bottom: $paddingMenu * 3 * -1;
+                min-width: calc(450px + 10vw);
                 max-width: calc(450px + 10vw);
             }
         }

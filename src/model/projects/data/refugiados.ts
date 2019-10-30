@@ -2,8 +2,8 @@ import {menuProject, project, typeProject} from '@/model/projects/type';
 
 const menuRefugiados: menuProject = {
     shape: 'shapeG2', 
-    textAlignment: 'right',
-    width: 110 
+    textAlignment: 'left',
+    width: 90
 };
 
 export const refugiados: project = {
@@ -12,7 +12,8 @@ export const refugiados: project = {
     title: 'Refugiados',
     menu: menuRefugiados,
     type: typeProject.international,
-    coverImage: 'coverRefugiados', 
+    coverImage: 'coverRefugiados',
+    coverPosition: '50% 35%',
     projectImage: 'projectRefugiados', 
     text: 'O projeto visa ações de acolhimento para refugiados, de diferentes nacionalidades, que residem ou passaem pelo Distrito Federal, através de iniciativas diversas.',
     getInvolved: 'O voluntariado neste projeto acontece em todas as áreas, desde o cuidado básico com as pessoas até o acompanhamento espiritual. Além disso, o auxílio com questões jurídicas, educacionais e profissionais também é muito bem-vindo.',

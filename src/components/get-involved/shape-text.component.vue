@@ -41,7 +41,7 @@
         position: relative;
         display: inline-block;
         cursor: pointer;
-        padding: 0 16px;
+        padding: 0 8px;
 
         .text{
             position: absolute;

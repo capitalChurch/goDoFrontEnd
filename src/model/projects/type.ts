@@ -11,6 +11,7 @@ export interface project {
     type: typeProject;
     menu: menuProject;
     coverImage: string;
+    coverPosition: string;
     projectImage: string;
     text: string;
     getInvolved: string;

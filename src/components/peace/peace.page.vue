@@ -1,17 +1,19 @@
 <template>
     <div class="peaceContainer">
-        <FixedElements color="purple" class="peace">
-            <TitleSection></TitleSection>
-            <AcronymSection></AcronymSection>
+        <FixedElements color="purple">
+            <div class="peace">
+                <TitleSection></TitleSection>
+                <AcronymSection></AcronymSection>
+            </div>
         </FixedElements>
         <div class="shapeBlue">
-            <img src="../../assets/shapes/shapeB3.png" alt="Shape Blue">
+            <img src="/static/shapes/shapeB3.png" alt="Shape Blue">
         </div>
         <div class="shapeYellow">
-            <img src="../../assets/shapes/shapeY4.png" alt="Shape Yellow">
+            <img src="/static/shapes/shapeY4.png" alt="Shape Yellow">
         </div>
         <div class="shapeRed">
-            <img src="../../assets/shapes/shapeR3.png" alt="Shape Red">
+            <img src="/static/shapes/shapeR3.png" alt="Shape Red">
         </div>
     </div>
 </template>
@@ -36,12 +38,12 @@
     .shapeBlue {
         z-index: 2;
         position: absolute;
-        top: 0;
+        top: -30px;
         left: calc(100px + 40%);
         width: calc(200px + 10vw);
     }
 
-    .shapeYellow{
+    .shapeYellow {
         z-index: 2;
         position: absolute;
         top: 35vh;
@@ -49,7 +51,7 @@
         width: calc(80px + 10vw);
     }
 
-    .shapeRed{
+    .shapeRed {
         z-index: 0;
         position: absolute;
         left: 0;
@@ -61,6 +63,7 @@
     .peace {
         padding: $marginTop $paddingLeft 0 $paddingLeft;
         background: $purpleColor;
+
     }
 </style>
 

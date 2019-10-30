@@ -11,17 +11,18 @@
             </div>
         </div>
         <div class="image">
-            <img src="../../assets/images/adolescenteBrincando.png" alt="Adolescente brincando na rua">
+            <LazyLoadImage src="/static/images/adolescenteBrincando.png" alt="Adolescente brincando na rua" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     @Component({
         name: "BeTheAnswerSection",
-        components: {}
+        components: {LazyLoadImage}
     })
     export default class BeTheAnswerSection extends Vue {
     }
@@ -54,7 +55,8 @@
             }
         }
 
-        .image{
+        .image img{
+            min-width: 600px;
             max-width: 600px;
         }
     }

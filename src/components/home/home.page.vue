@@ -3,10 +3,10 @@
         <CoverSection></CoverSection>
         <AboutSection></AboutSection>
         <PeaceSection></PeaceSection>
-        <SupportSection v-if="false"></SupportSection>
-        <PraySection v-if="false"></PraySection>
-        <EventsSection v-if="false"></EventsSection>
-        <NewsSection v-if="false"></NewsSection>
+        <SupportSection></SupportSection>
+        <PraySection></PraySection>
+        <EventsSection></EventsSection>
+        <NewsSection></NewsSection>
     </FixedElements>
 </template>
 

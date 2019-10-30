@@ -1,18 +1,22 @@
 <template>
-    <FixedElements color="purple" class="getInvolved">
-        <div class="title">envolva-se</div>
-        <div class="project" v-for="(projects, i) in lstProjects" :key="i">
-            <div class="subtitle">{{projects.title}} <img :src="getUrlImage(projects.imageUrl)" v-if="!!projects.imageUrl" :alt="projects.title"></div>
-            <div class="projects">
-                <ShapeText
-                        v-for="proj in projects.data"
-                        :key="proj.key"
-                        :text="proj.title"
-                        :width="proj.menu.width"
-                        :text-alignment="proj.menu.textAlignment"
-                        @click="openProject(proj)">
-                    <img :src="getUrlShape(proj)" alt="Shape">
-                </ShapeText>
+    <FixedElements color="purple" class="getInvolvedContainer">
+        <div class="getInvolved">
+            <div class="title">envolva-se</div>
+            <div class="project" v-for="(projects, i) in lstProjects" :key="i">
+                <div class="subtitle">{{projects.title}}
+                    <LazyLoadImage :alt="projects.title" :src="getUrlImage(projects.imageUrl)" v-if="!!projects.imageUrl" />
+                </div>
+                <div class="projects">
+                    <ShapeText
+                            v-for="proj in projects.data"
+                            :key="proj.key"
+                            :text="proj.title"
+                            :width="proj.menu.width"
+                            :text-alignment="proj.menu.textAlignment"
+                            @click="openProject(proj)">
+                        <LazyLoadImage alt="Shape" :src="getUrlShape(proj)" />
+                    </ShapeText>
+                </div>
             </div>
         </div>
     </FixedElements>
@@ -24,6 +28,9 @@
     import ShapeText from "@/components/get-involved/shape-text.component.vue";
     import {project, typeProject} from "@/model/projects/type";
     import {allProjects} from "@/model/projects/allProjects";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
+    import LazyLoadImage from '@/components/common/utils/lazy-load-image.component.vue';
 
     interface projects{
         data: project[];
@@ -32,7 +39,7 @@
     }
     @Component({
         name: 'GetInvolvedPage',
-        components: {ShapeText, FixedElements}
+        components: {LazyLoadImage, ShapeText, FixedElements}
     })
     export default class GetInvolvedPage extends Vue{
         public lstProjects: projects[] = [
@@ -48,15 +55,15 @@
         ];
 
         public getUrlShape(proj: project){
-            return require(`../../assets/shapes/${proj.menu.shape}.png`);
+            return `/static/shapes/${proj.menu.shape}.png`;
         }
 
         public getUrlImage(imageName: string){
-            return require(`../../assets/images/${imageName}.png`);
+            return `/static/images/${imageName}.png`;
         }
 
         public openProject(proj: project){
-            this.$router.push(`/projects/${proj.key}`);
+            changeRoute(routeEnum.Project, proj.key);
         }
     }
 </script>
@@ -64,39 +71,42 @@
 <style lang="scss" scoped>
     @import "../../theme";
 
-    .getInvolved{
-        margin-top: $marginTop;
-        padding: $paddingMenu $paddingLeft;
-        text-align: left;
+    .getInvolvedContainer{
+        padding-top: $marginTop;
 
-        .title{
-            $fontSize: $h1FontSize;
+        .getInvolved{
+            padding: $paddingMenu $paddingLeft;
+            text-align: left;
 
-            color: $purpleColor;
-            font-size: $fontSize;
-            line-height: $fontSize;
-            font-weight: 700;
-        }
+            .title{
+                $fontSize: $h1FontSize;
 
-        .subtitle{
-            $fontSize: $h6FontSize;
-
-            color: $purpleColor;
-            text-transform: uppercase;
-            font-size: $fontSize;
-            line-height: $fontSize;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-
-            vertical-align: middle;
-            img{
-                padding-left: 8px;
-                height: $fontSize * 1.4;
+                color: $purpleColor;
+                font-size: $fontSize;
+                line-height: $fontSize;
+                font-weight: 700;
             }
-        }
 
-        .projects{
-            padding: $paddingMenu*2 0;
+            .subtitle{
+                $fontSize: $h6FontSize;
+
+                color: $purpleColor;
+                text-transform: uppercase;
+                font-size: $fontSize;
+                line-height: $fontSize;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+
+                vertical-align: middle;
+                img{
+                    padding-left: 8px;
+                    height: $fontSize * 1.4;
+                }
+            }
+
+            .projects{
+                padding: $paddingMenu*2 0;
+            }
         }
     }
 </style>

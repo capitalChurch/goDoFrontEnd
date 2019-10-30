@@ -13,17 +13,19 @@
             <Button @click="openPeacePage()">explorar</Button>
         </div>
         <div class="yellowShape">
-            <img src="../../assets/shapes/amarelo.png" alt="Yellow Shape">
+            <img src="/static/shapes/amarelo.png" alt="Yellow Shape">
         </div>
         <div class="redShape">
-            <img src="../../assets/shapes/vermelho.png" alt="Red Shape">
+            <img src="/static/shapes/vermelho.png" alt="Red Shape">
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import {Vue, Component} from "vue-property-decorator";
-    import Button from '@/components/common/utils/button.component.vue';
+    import {Component, Vue} from "vue-property-decorator";
+    import Button from "@/components/common/utils/button.component.vue";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
 
     interface peaceText{
         title: string;
@@ -44,7 +46,7 @@
         ];
 
         public openPeacePage(){
-            this.$router.push('/peace')
+            changeRoute(routeEnum.Peace);
         }
     }
 </script>
@@ -88,6 +90,7 @@
                 span.title{
                     padding-top: 32px;
                     max-height: 35vh;
+                    font-weight: 700;
                     font-size: $h3FontSize;
                     line-height: $h3FontSize;
                     writing-mode: vertical-rl;

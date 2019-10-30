@@ -1,3 +1,4 @@
+import {routeEnum} from "@/model/types";
 <template>
     <div class="contactBarComponent">
         <span :class="['contact', {accentColor: !color}, color]" @click="openContact()">Tire suas dúvidas</span>
@@ -9,10 +10,12 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop} from "vue-property-decorator";
-    import Instagram from '@/components/common/utils/icons/instagram.vue';
-    import Facebook from '@/components/common/utils/icons/facebook.vue';
+    import {Component, Prop, Vue} from "vue-property-decorator";
+    import Instagram from "@/components/common/utils/icons/instagram.vue";
+    import Facebook from "@/components/common/utils/icons/facebook.vue";
     import {Color} from "@/components/common/types";
+    import {changeRoute} from "@/main";
+    import {routeEnum} from '@/model/types';
 
     @Component({
         name: "ContactBarComponent",
@@ -23,7 +26,7 @@
         public color!: Color;
 
         public openContact(): void{
-            this.$router.push('/contact');
+            changeRoute(routeEnum.Contact);
         }
     }
 </script>z
