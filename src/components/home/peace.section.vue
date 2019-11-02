@@ -99,6 +99,7 @@
                 }
 
                 span.text{
+                    min-height: 40px;
                     align-self: flex-start;
                     text-align: left;
                     justify-content: left;
