@@ -1,52 +1,112 @@
 <template>
-    <div class="coverSection md-layout md-gutter">
-        <div class="container md-layout-item">
-            <div class="carousel">
-                <input type="radio" id="carousel-1" name="carousel[]" checked/>
-                <input type="radio" id="carousel-2" name="carousel[]"/>
-                <input type="radio" id="carousel-3" name="carousel[]"/>
-                <input type="radio" id="carousel-4" name="carousel[]"/>
-                <input type="radio" id="carousel-5" name="carousel[]"/>
-                <div class="insptext md-display-3">
-                    <h3>Seja a
-                        <br/>resposta para
-                        <br/> as necessidades do mundo.
-                    </h3>
-                </div>
-                <ul class="carousel__items">
-                    <li class="carousel__item">
-                        <LazyLoadImageComponent
-                                alt="Guine"
-                                src="/static/images/guine.png"/>
-                    </li>
-                </ul>
-                <div class="carousel__nav">
-                </div>
-            </div>
+    <div class="coverSection">
+        <div class="background">
+            <img :src="actualImage.src" alt="Cover" :class="{actualImage: true, small: actualImage.isSmall, changingImage}"/>
+            <img :src="nextImage.src" alt="next cover" :class="{nextImage: true, small: nextImage.isSmall, changingImage}"/>
         </div>
+        <div class="feedBackContainer" v-if="imagesLoaded.length > 1">
+            <div :class="{feedback: true, active: i.position === actualImage.position}" v-for="i in imagesLoaded"></div>
+        </div>
+        <h1>Seja a<br/>resposta para as necessidades do mundo.</h1>
     </div>
 </template>
+
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import LazyLoadImageComponent from "@/components/common/utils/lazy-load-image.component.vue";
+    import {loadImages} from "@/model/utils";
+
+    interface loadedImage {
+        position: number;
+        src: string;
+        isSmall: boolean;
+    }
 
     @Component({
         name: "CoverSection",
-        components: {LazyLoadImageComponent}
+        components: {}
     })
     export default class CoverSection extends Vue {
+        public readonly srcImages: string[] = [
+            "/static/images/guine.png",
+            // "/static/images/coverCristolandia.png",
+            // "/static/images/coverEspanha.png",
+            // "/static/images/coverGuine.png"
+        ];
+
+        public actualPosition: number = 0;
+        public changingImage: boolean = false;
+        private images: loadedImage[] = this.srcImages.map((x, i) => ({
+            position: i,
+            src: "",
+            isSmall: false
+        }));
+
+        public get imagesLoaded(): loadedImage[] {
+            return this.images.filter(x => !!x.src);
+        }
+
+        public get actualImage(): loadedImage {
+            return this.imagesLoaded[this.actualPosition] || {};
+        }
+
+        public get nextImage(): loadedImage {
+            return this.imagesLoaded[this.nextPosition] || {};
+        }
+
+        private get nextPosition(): number {
+            return (this.actualPosition + 1) % this.imagesLoaded.length;
+        }
+
+        public mounted() {
+            setInterval(this.changePicture.bind(this), 5 * 1000);
+            this.loadImages();
+        }
+
+        public loadImages() {
+            this.srcImages.forEach((src, i) => {
+                loadImages(src, (loadedSrc, sizeIndex) => {
+                    const isSmall = sizeIndex === 0;
+                    this.images = this.images.map((x, index) => {
+                        if (i !== index) {
+                            return x;
+                        }
+
+                        return {
+                            position: index,
+                            src: loadedSrc,
+                            isSmall
+                        };
+                    });
+                });
+            });
+        }
+
+        public changePicture() {
+            const {nextPosition} = this;
+            if (this.actualPosition === nextPosition) {
+                return;
+            }
+
+            this.changingImage = true;
+            setTimeout(() => {
+                this.actualPosition = nextPosition;
+                this.changingImage = false;
+            }, .65 * 1000);
+        }
     }
 </script>
+
 <style lang="scss" scoped>
     @import "../../theme";
 
     .coverSection {
+        position: relative;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         height: 100vh;
         padding-bottom: $appBarHeight;
-        padding-left: calc((100vw - #{$maxWidthBody}) / 2);
+        padding-left: $paddingLeft;
 
         h1 {
             font-size: $h0FontSize;
@@ -57,177 +117,66 @@
             text-align: left;
             z-index: 2;
         }
-    }
 
-    %animation-default {
-        opacity: 1 !important;
-        z-index: 3;
-    }
-
-    @mixin carousel($items, $animation: 'default') {
-        .carousel {
-            width: 100vw;
-            height: 100vh;
+        .background {
             position: absolute;
-            overflow: hidden;
             top: 0;
             left: 0;
-
-            > input[type="radio"] {
-                position: absolute;
-                left: 0;
-                opacity: 0;
-                top: 0;
-
-                &:checked {
-                    ~ .carousel__items .carousel__item,
-                    ~ .carousel__prev > label,
-                    ~ .carousel__next > label {
-                        opacity: 0;
-                    }
-                }
-
-                @for $i from 1 through $items {
-                    &:nth-child(#{$i}) {
-                        &:checked {
-                            ~ .carousel__items .carousel__item {
-                                @if $animation == 'default' {
-                                    &:nth-child(#{$i}) {
-                                        opacity: 1;
-                                    }
-                                }
-                            }
-
-                            ~ .carousel__prev {
-                                > label {
-                                    @if $i == 1 {
-                                        &:nth-child(#{$items}) {
-                                            @extend %animation-default;
-                                        }
-                                    } @else if $i == $items {
-                                        &:nth-child(#{$items - 1}) {
-                                            @extend %animation-default;
-                                        }
-                                    } @else {
-                                        &:nth-child(#{$i - 1}) {
-                                            @extend %animation-default;
-                                        }
-                                    }
-                                }
-                            }
-
-                            ~ .carousel__next {
-                                > label {
-                                    @if $i == $items {
-                                        &:nth-child(1) {
-                                            @extend %animation-default;
-                                        }
-                                    } @else {
-                                        &:nth-child(#{$i + 1}) {
-                                            @extend %animation-default;
-                                        }
-                                    }
-                                }
-                            }
-
-                            ~ .carousel__nav {
-                                > label {
-                                    &:nth-child(#{$i}) {
-                                        background: #ccc;
-                                        cursor: default;
-                                        pointer-events: none;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            &__items {
-                margin: 0;
-                padding: 0;
-                list-style-type: none;
-                width: 100%;
-                height: 600px;
-                position: relative;
-            }
-
-            &__item {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                transition: opacity 2s;
-                -webkit-transition: opacity 2s;
-
-                img {
-                    width: 100%;
-                    vertical-align: middle;
-                }
-            }
-
-            &__nav {
-                position: absolute;
-                bottom: 3%;
-                left: 0;
-                text-align: center;
-                width: 100%;
-                z-index: 3;
-
-                > label {
-                    border: 1px solid #fff;
-                    display: inline-block;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    margin: 0 .125%;
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-        }
-
-
-        .insptext {
-            z-index: 5 !important;
-            position: absolute;
-            color: #fff !important;
-            background-color: transparent;
-            bottom: 40px;
+            overflow: hidden;
+            height: 100%;
             width: 100%;
-            text-align: center;
-            // font-size: 60px;
-            line-height: $h0FontSize;
-            max-width: 60%;
-            text-align: left;
-            top: 30%;
-            left: 9%;
-            //font-variant: small-caps;
+
+            .actualImage, .nextImage {
+                overflow-x: hidden;
+                position: absolute;
+                top: 0;
+
+                &.small {
+                    filter: blur(1px);
+                }
+
+                &.changingImage {
+                    transition: 650ms ease-in-out transform;
+                }
+            }
+
+            .actualImage {
+                left: 0;
+
+                &.changingImage {
+                    transform: translateX(-30%);
+                }
+            }
+
+            .nextImage {
+                left: 100%;
+
+                &.changingImage {
+                    transform: translateX(-100%);
+                }
+            }
         }
 
+        .feedBackContainer{
+            display: flex;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+
+            .feedback{
+                $size: 14px;
+                width: $size;
+                height: $size;
+                border-radius: 50%;
+                border: 2px white solid;
+                margin: 4px;
+
+                &.active{
+                    background: white;
+                }
+            }
+        }
     }
-
-    *,
-    *:before,
-    *:after {
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-    }
-
-    body {
-        background: #fcfcfc;
-        margin: 0;
-    }
-
-    .container {
-        width: 900px;
-        min-width: 900px;
-        margin: 50px auto;
-    }
-
-    @include carousel(5);
-
 </style>

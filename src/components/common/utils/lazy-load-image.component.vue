@@ -1,9 +1,10 @@
 <template>
-    <img :alt="alt" ref="imageTag" :class="[{loading: loadingSecond}, 'missionecas']">
+    <img :alt="alt" ref="imageTag" :class="[{loading: loadingSecond}]">
 </template>
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator";
+    import {loadImages} from '@/model/utils';
 
     @Component({
         name: "LazyLoadImageComponent",
@@ -18,35 +19,20 @@
         @Prop({required: true})
         public alt!: string;
 
-        public created(){
+        public created() {
             const {src} = this;
 
-            const images = ['Small', 'Medium', ''].map(s => src.replace(/\./, `${s}.`));
-            this.loadImages(images);
-        }
-
-        public loadImages(lstSrc: string[], index: number = 0): void{
-            if(lstSrc.length <= index)
-                return;
-
-            const image = new Image();
-
-            image.onload = () => {
+            loadImages(src, (imageSrc, index) => {
                 this.loadingSecond = index === 0;
                 const el = (this.$refs.imageTag as any);
-                el.src = lstSrc[index];
-                this.loadImages(lstSrc, ++index);
-            };
-
-            image.onerror = () => this.loadImages(lstSrc, ++index);
-
-            image.src = lstSrc[index];
+                el.src = imageSrc;
+            });
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .loading{
+    .loading {
         filter: blur(4px);
     }
 </style>
