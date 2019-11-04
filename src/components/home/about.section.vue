@@ -1,6 +1,6 @@
 <template>
     <div class="aboutSection">
-        <div class="info">
+        <div class="info" data-aos="fade-up" data-aos-anchor-placement="center-center">
             <h1>Go&Do</h1>
 
             <div class="text">
