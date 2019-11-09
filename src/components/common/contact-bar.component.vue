@@ -1,10 +1,9 @@
-import {routeEnum} from "@/model/types";
 <template>
     <div class="contactBarComponent">
         <span :class="['contact', {accentColor: !color}, color]" @click="openContact()">Tire suas dúvidas</span>
         <div>
-            <a href="https://www.instagram.com/igrejabcapital/"><Instagram :color="color" /></a>
-            <a href="https://www.facebook.com/igrejabcapital/"><Facebook :color="color" /></a>
+            <a target="_blank" href="https://www.instagram.com/igrejabcapital/"><Instagram :color="color" /></a>
+            <a target="_blank" href="https://www.facebook.com/igrejabcapital/"><Facebook :color="color" /></a>
         </div>
     </div>
 </template>
