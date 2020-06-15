@@ -55,11 +55,11 @@
         ];
 
         public getUrlShape(proj: project){
-            return `/static/shapes/${proj.menu.shape}.png`;
+            return `static/shapes/${proj.menu.shape}.png`;
         }
 
         public getUrlImage(imageName: string){
-            return `/static/images/${imageName}.png`;
+            return `static/images/${imageName}.png`;
         }
 
         public openProject(proj: project){

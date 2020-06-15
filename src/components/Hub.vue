@@ -30,7 +30,7 @@ import {routeEnum} from "@/model/types";
         }
 
         public created(){
-            if(window.location.hostname.indexOf('goanddo') === -1)
+            if(!window.location.href.includes('goanddo'))
                 return;
 
             changeRoute(routeEnum.Home);

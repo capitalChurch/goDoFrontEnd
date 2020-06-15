@@ -45,7 +45,7 @@
         }
 
         public urlImage(str: string): string{
-            return `/static/images/${str}.png`;
+            return `static/images/${str}.png`;
         }
     }
 </script>
