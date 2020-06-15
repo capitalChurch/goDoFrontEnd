@@ -7,13 +7,13 @@
             </div>
         </FixedElements>
         <div class="shapeBlue">
-            <img src="/static/shapes/shapeB3.png" alt="Shape Blue">
+            <img src="static/shapes/shapeB3.png" alt="Shape Blue">
         </div>
         <div class="shapeYellow">
-            <img src="/static/shapes/shapeY4.png" alt="Shape Yellow">
+            <img src="static/shapes/shapeY4.png" alt="Shape Yellow">
         </div>
         <div class="shapeRed">
-            <img src="/static/shapes/shapeR3.png" alt="Shape Red">
+            <img src="static/shapes/shapeR3.png" alt="Shape Red">
         </div>
     </div>
 </template>

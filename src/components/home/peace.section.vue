@@ -13,10 +13,10 @@
             <Button @click="openPeacePage()">explorar</Button>
         </div>
         <div class="yellowShape">
-            <img src="/static/shapes/amarelo.png" alt="Yellow Shape">
+            <img src="static/shapes/amarelo.png" alt="Yellow Shape">
         </div>
         <div class="redShape">
-            <img src="/static/shapes/vermelho.png" alt="Red Shape">
+            <img src="static/shapes/vermelho.png" alt="Red Shape">
         </div>
     </div>
 </template>

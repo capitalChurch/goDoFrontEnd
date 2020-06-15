@@ -1,7 +1,7 @@
 <template>
     <div class="quoteSection">
         <div class="image">
-            <LazyLoadImage src="/static/images/gilberto.png" alt="Pr. Gilberto Wegermann" />
+            <LazyLoadImage src="static/images/gilberto.png" alt="Pr. Gilberto Wegermann" />
         </div>
         <div class="quote">
             <p>“Ele morreu, e pela sua morte encontramos vida. Ele ressuscitou, e pelo seu amor espalhamos as boas novas”.</p>

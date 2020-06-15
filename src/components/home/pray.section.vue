@@ -15,7 +15,7 @@
             <Button color="blue">explorar</Button>
         </div>
         <div class="image">
-            <LazyLoadImage src="/static/shapes/world.png" alt="World Shpa" />
+            <LazyLoadImage src="static/shapes/world.png" alt="World Shpa" />
         </div>
     </div>
 </template>

@@ -2,7 +2,7 @@
     <div class="acronymSection">
         <AcronymComponent v-for="({letter, texts}) in letters" :texts="texts" :letter="letter"/>
         <div class="shapeGreen">
-            <img src="/static/shapes/shapeG3.png" alt="Shape Green">
+            <img src="static/shapes/shapeG3.png" alt="Shape Green">
         </div>
     </div>
 </template>

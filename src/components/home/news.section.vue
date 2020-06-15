@@ -6,10 +6,10 @@
             <div class="text">{{n.text}}</div>
         </div>
         <div class="yellowShape">
-            <LazyLoadImage src="/static/shapes/shapeY6.png" alt="Yellow Shape"/>
+            <LazyLoadImage src="static/shapes/shapeY6.png" alt="Yellow Shape"/>
         </div>
         <div class="blueShape">
-            <LazyLoadImage src="/static/shapes/shapeB3.png" alt="Blue Shape"/>
+            <LazyLoadImage src="static/shapes/shapeB3.png" alt="Blue Shape"/>
         </div>
     </div>
 </template>

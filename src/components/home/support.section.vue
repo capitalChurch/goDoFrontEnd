@@ -8,10 +8,10 @@
             </div>
         </div>
         <div class="image">
-            <LazyLoadImage src="/static/images/support.png" alt="Support" />
+            <LazyLoadImage src="static/images/support.png" alt="Support" />
         </div>
         <div class="purpleShape">
-            <LazyLoadImage src="/static/shapes/shapeP5.png " alt="Purple Shape" />
+            <LazyLoadImage src="static/shapes/shapeP5.png " alt="Purple Shape" />
         </div>
     </div>
 </template>

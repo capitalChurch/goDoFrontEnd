@@ -1,5 +1,5 @@
 <template>
-    <img :alt="alt" ref="imageTag" :class="[{loading: loadingSecond}, 'missionecas']">
+    <img :alt="alt" ref="imageTag" :class="[{loading: loadingSecond}]">
 </template>
 
 <script lang="ts">

@@ -17,7 +17,7 @@
                     <li class="carousel__item">
                         <LazyLoadImageComponent
                                 alt="Guine"
-                                src="/static/images/guine.png"/>
+                                src="static/images/guine.png"/>
                     </li>
                 </ul>
                 <div class="carousel__nav">
