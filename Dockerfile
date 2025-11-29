@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:20-alpine
 RUN npm install -g http-server
 
 WORKDIR /app
