@@ -28,7 +28,7 @@ Vue.config.productionTip = false;
 
 
 export const allRoutes: routes[] = [
-  {id: routeEnum.Hub, path: '/', component: HubPage},
+  {id: routeEnum.Hub, path: '/hub', component: HubPage},
   {id: routeEnum.Home, path: '/home', component: HomePage},
   {id: routeEnum.Login, path: '/user/login', component: LoginPage},
   {id: routeEnum.Profile, path: '/user/profile', component: ProfilePage},
@@ -44,7 +44,10 @@ export const allRoutes: routes[] = [
   {id: routeEnum.AboutUs, path: '/aboutUs', component: AboutUsPage}
 ];
 
-const routesVue: RouteConfig[] = allRoutes.map(({path, component}) => ({path, component}));
+const routesVue: RouteConfig[] = [
+  { path: '/', redirect: '/home' },
+  ...allRoutes.map(({path, component}) => ({path, component}))
+];
 
 const router = new VueRouter({
   base: process.env.NODE_ENV === 'production' ? '/go-and-do/' : '/',
