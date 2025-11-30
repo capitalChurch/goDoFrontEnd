@@ -47,6 +47,7 @@ export const allRoutes: routes[] = [
 const routesVue: RouteConfig[] = allRoutes.map(({path, component}) => ({path, component}));
 
 const router = new VueRouter({
+  base: process.env.NODE_ENV === 'production' ? '/go-and-do/' : '/',
   routes: routesVue,
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
